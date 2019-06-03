@@ -103,3 +103,25 @@ body {
     opacity: 0.5;
 }
 
+.center-data table > td > tr{
+    text-align:center;
+    vertical-align:middle;
+}
+
+.carousel .carousel-indicators li {
+    background-color: #fff;
+    background-color: rgba(70, 70, 70, 0.25);
+}
+
+.carousel .carousel-indicators .active {
+    background-color: #444;
+}
+
+.carousel-indicators {
+    bottom: -50px;
+}
+
+.footer-pad{
+    padding-bottom:50px;
+}
+

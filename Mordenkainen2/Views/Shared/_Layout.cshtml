@@ -41,49 +41,51 @@
                 <li class="nav-item "><button type="button" class="btn btn-danger nav-link" data-toggle="collapse" data-target="#log">Login</button></li>
                 <li class="nav-item "><button type="button" class="btn btn-danger nav-link" data-toggle="collapse" data-target="#reg">Register</button></li>
             </ul>
-                <div id="log" class="collapse" >
-                    <div class="card-body">
-                        <form class="my-2 my-lg-0" id="log" asp-controller="Home" asp-action="Login" method="post">
-                            <label asp-for="LoginModel.Email" class="control-label formText"></label>
-                            <input asp-for="LoginModel.Email" class="form-control" /><br />
-                            <label asp-for="LoginModel.Password" class="control-label formText"></label>
-                            <input asp-for="LoginModel.Password" class="form-control" />
-                            <button type="submit" class="btn btn-default">Login</button>
-                        </form>
-                    </div>
-                </div>
-                
-                <div id="reg" class="collapse">
-                    <form id="reg" asp-controller="Home" asp-action="Register" method="post">
-                        <label asp-for="RegisterModel.Email" class="control-label formText"></label>
-                        <input asp-for="RegisterModel.Email" class="form-control" />
-                        <label asp-for="RegisterModel.Password" class="control-label formText"></label>
-                        <input asp-for="RegisterModel.Password" class="form-control " />
-                        <label asp-for="RegisterModel.Vpassword" class="control-label formText">Confirm</label>
-                        <input asp-for="RegisterModel.Vpassword" class="form-control" />
-                        <button type="submit" class="btn btn-default">Register</button>
+            <div id="log" class="collapse">
+                <div class="card-body">
+                    <form class="my-2 my-lg-0" id="log" asp-controller="Home" asp-action="Login" method="post">
+                        <label asp-for="LoginModel.Email" class="control-label formText"></label>
+                        <input asp-for="LoginModel.Email" class="form-control" /><br />
+                        <label asp-for="LoginModel.Password" class="control-label formText"></label>
+                        <input asp-for="LoginModel.Password" class="form-control" />
+                        <button type="submit" class="btn btn-default">Login</button>
                     </form>
                 </div>
+            </div>
+
+            <div id="reg" class="collapse">
+                <form id="reg" asp-controller="Home" asp-action="Register" method="post">
+                    <label asp-for="RegisterModel.Email" class="control-label formText"></label>
+                    <input asp-for="RegisterModel.Email" class="form-control" />
+                    <label asp-for="RegisterModel.Password" class="control-label formText"></label>
+                    <input asp-for="RegisterModel.Password" class="form-control " />
+                    <label asp-for="RegisterModel.Vpassword" class="control-label formText">Confirm</label>
+                    <input asp-for="RegisterModel.Vpassword" class="form-control" />
+                    <button type="submit" class="btn btn-default">Register</button>
+                </form>
+            </div>
         </div>
     </nav>
 
 
     <partial name="_CookieConsentPartial" />
 
-    <div class="container body-content">
+    <div class="container body-content footer-pad">
         @RenderBody()
-        <hr />
-        <footer>
-            <a href="#" class="fa fa-facebook"></a>
-            <a href="#" class="fa fa-twitter"></a>
-            <a href="#" class="fa fa-google"></a>
-            <a href="#" class="fa fa-linkedin"></a>
-            <a href="#" class="fa fa-youtube"></a>
-            <a href="#" class="fa fa-pinterest"></a>
-            <a href="#" class="fa fa-reddit"></a>
-            <p>&copy; 2019 - Mordenkainen</p>
-        </footer>
-</div>
+
+    </div>
+    <hr />
+    <footer>
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-google"></a>
+        <a href="#" class="fa fa-linkedin"></a>
+        <a href="#" class="fa fa-youtube"></a>
+        <a href="#" class="fa fa-pinterest"></a>
+        <a href="#" class="fa fa-reddit"></a>
+        <p>&copy; 2019 - Mordenkainen</p>
+    </footer>
+
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.min.js"></script>

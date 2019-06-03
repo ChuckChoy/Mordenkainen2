@@ -4,17 +4,14 @@
 }
 <h2>Character Creation</h2>
 <!--Note: need some way to page through multiple blocks of inputs. Ideas: partial views, -->
-<div class="contrainer">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
+<div class="container">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+       
         <form id="reg" asp-controller="Home" asp-action="CreateCharacter" method="post">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="row">
+                        <div class="col-12 text-center"><h4>Main Info</h4></div>
                         <div class="col-2"></div>
                         <div class="col-8">
                             <label asp-for="CharacterSheet.CharacterName" class="control-label formText">Character Name</label>
@@ -37,6 +34,7 @@
                 </div>
                 <div class="carousel-item">
                     <div class="row">
+                        <div class="col-12 text-center"><h4>Ability Scores</h4></div>
                         <div class="col-2"></div>
                         <div class="col-8">
                             <label asp-for="CharacterSheet.Strength" class="control-label formText">Strength</label>
@@ -56,8 +54,82 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                  
+                    <div class="row">
+                        <div class="col-12 text-center"><h4>Saving Throws</h4></div>
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <label asp-for="CharacterSheet.Inspiration" class="control-label formText">Inspiration</label>
+                            <input asp-for="CharacterSheet.Inspiration" class="form-control" placeholder="ex. 10" />
+                            <label asp-for="CharacterSheet.ProficiencyBonus" class="control-label formText">Proficiency Bonus</label>
+                            <input asp-for="CharacterSheet.ProficiencyBonus" class="form-control" placeholder="ex. 10" />
+                            <div class="table-responsive">
+                                <table class="table table-striped table-sm center-data">
+                                    <thead>
+                                        <tr>
+                                            <td>Prof.</td>
+                                            <td>#</td>
+                                            <td>Type</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input asp-for="SavingThrows.StrSaveProf" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="SavingThrows.StrSave" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="SavingThrows.StrSaveProf" class="control-label form-text">Strength</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="SavingThrows.DexSaveProf" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="SavingThrows.DexSave" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="SavingThrows.DexSaveProf" class="control-label form-text">Dexterity</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="SavingThrows.ConSaveProf" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="SavingThrows.ConSave" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="SavingThrows.ConSaveProf" class="control-label form-text">Constitution</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="SavingThrows.WisSaveProf" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="SavingThrows.WisSave" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="SavingThrows.WisSaveProf" class="control-label form-text">Wisdom</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="SavingThrows.IntSaveProf" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="SavingThrows.IntSave" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="SavingThrows.IntSaveProf" class="control-label form-text">Intelligence</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="SavingThrows.ChaSaveProf" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="SavingThrows.ChaSave" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="SavingThrows.ChaSaveProf" class="control-label form-text">Charisma</label></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
                 </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-12 text-center"><h4>Skills 1 of 2</h4></div>
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-sm center-data">
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="Skills.Acrobatics" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Acrobatics" class="control-label form-text">Acrobatics</label></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                </div>
+
             </div>
         </form>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -68,5 +140,11 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        </ol>
     </div>
 </div>

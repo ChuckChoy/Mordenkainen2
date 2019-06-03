@@ -1,8 +1,5 @@
 ﻿//character creation carousel. added pause because id don't want and auto-sliding carousel
-$("#carouselExampleControls").carousel('pause');
-$('#myCarousel').on('slide.bs.carousel', function () {
-    $(this).carousel('pause');
-});
+$("#carouselExampleControls").carousel();
 
 //posts login info
 // subverts submit button for ajax request.
