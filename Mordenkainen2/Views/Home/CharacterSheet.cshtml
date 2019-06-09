@@ -62,22 +62,23 @@
                 </div>
                 <div id="saves_skills" class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
                     <div class="inspiration">
-                        <input asp-for="CharacterSheet.ProficiencyBonus" />
-                        <input asp-for="CharacterSheet.Inspiration" />
+                        <input asp-for="CharacterSheet.Inspiration" class="no-Spinner" style="position:relative; top:12%; width:15%; left:0.9em; " /><br />
+                        <input asp-for="CharacterSheet.ProficiencyBonus" class="no-Spinner" style="position:relative; top:42%; width:15%; left:0.9em" />
                     </div>
-                    <div class="savingThrows"></div>
-                        <input asp-for="SavingThrows.StrSaveProf" type="checkbox" class="form-control" />
-                        <input asp-for="SavingThrows.StrSave" placeholder="ex. 1" class="form-control" />
-                        <input asp-for="SavingThrows.DexSaveProf" type="checkbox" class="form-control" />
-                        <input asp-for="SavingThrows.DexSave" placeholder="ex. 1" class="form-control" />
-                        <input asp-for="SavingThrows.ConSaveProf" type="checkbox" class="form-control" />
-                        <input asp-for="SavingThrows.ConSave" placeholder="ex. 1" class="form-control" />
-                        <input asp-for="SavingThrows.IntSaveProf" type="checkbox" class="form-control" />
-                        <input asp-for="SavingThrows.IntSave" placeholder="ex. 1" class="form-control" />
-                        <input asp-for="SavingThrows.WisSaveProf" type="checkbox" class="form-control" />
-                        <input asp-for="SavingThrows.WisSave" placeholder="ex. 1" class="form-control" />
-                        <input asp-for="SavingThrows.ChaSaveProf" type="checkbox" class="form-control" />
-                        <input asp-for="SavingThrows.ChaSave" placeholder="ex. 1" class="form-control" />
+                    <div class="savingThrows">
+                        <input asp-for="SavingThrows.StrSaveProf" type="checkbox" class="skill-checkbox" style="top:7%;" />
+                        <input asp-for="SavingThrows.StrSave" class="no-Spinner skill-check" style="top:7%" /><br />
+                        <input asp-for="SavingThrows.DexSaveProf" type="checkbox" class="skill-checkbox" style="top:7%;" />
+                        <input asp-for="SavingThrows.DexSave" class="no-Spinner skill-check" style="top:7%" /><br />
+                        <input asp-for="SavingThrows.ConSaveProf" type="checkbox" class="skill-checkbox" style="top:8%;" />
+                        <input asp-for="SavingThrows.ConSave" class="no-Spinner skill-check" style="top:8%" /><br />
+                        <input asp-for="SavingThrows.IntSaveProf" type="checkbox" class="skill-checkbox" style="top:8%;" />
+                        <input asp-for="SavingThrows.IntSave" class="no-Spinner skill-check" style="top:8%" /><br />
+                        <input asp-for="SavingThrows.WisSaveProf" type="checkbox" class="skill-checkbox" style="top:9%;" />
+                        <input asp-for="SavingThrows.WisSave" class="no-Spinner skill-check" style="top:9%" /><br />
+                        <input asp-for="SavingThrows.ChaSaveProf" type="checkbox" class="skill-checkbox" style="top:9%;" />
+                        <input asp-for="SavingThrows.ChaSave" class="no-Spinner skill-check" style="top:9%" />
+                    </div>
                     <div class="skills"></div>
                 </div>
             </div>

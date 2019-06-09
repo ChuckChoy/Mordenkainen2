@@ -189,23 +189,41 @@ namespace Mordenkainen2.Models
         public int SkillsID { get; set; }
         [ForeignKey("CharacterSheet")]
         public int CharacterID { get; set; }
+        public bool Acrobatics_T { get; set; }
         public byte Acrobatics { get; set; }
+        public bool AnimalHandling_T { get; set; }
         public byte AnimalHandling { get; set; }
+        public bool Arcana_T { get; set; }
         public byte Arcana { get; set; }
+        public bool Athletics_T { get; set; }
         public byte Athletics { get; set; }
+        public bool Deception_T { get; set; }
         public byte Deception { get; set; }
+        public bool History_T { get; set; }
         public byte History { get; set; }
+        public bool Insight_T { get; set; }
         public byte Insight { get; set; }
+        public bool Intimidation_T { get; set; }
         public byte Intimidation { get; set; }
+        public bool Investigation_T { get; set; }
         public byte Investigation { get; set; }
+        public bool Medicine_T { get; set; }
         public byte Medicine { get; set; }
+        public bool Nature_T { get; set; }
         public byte Nature { get; set; }
+        public bool Perception_T { get; set; }
         public byte Perception { get; set; }
+        public bool Performance_T { get; set; }
         public byte Performance { get; set; }
+        public bool Persuasion_T { get; set; }
         public byte Persuasion { get; set; }
+        public bool Religion_T { get; set; }
         public byte Religion { get; set; }
+        public bool Sleight_T { get; set; }
         public byte Sleight { get; set; }
+        public bool Stealth_T { get; set; }
         public byte Stealth { get; set; }
+        public bool Survival_T { get; set; }
         public byte Survival { get; set; }
 
         public CharacterSheet CharacterSheet { get; set; }
