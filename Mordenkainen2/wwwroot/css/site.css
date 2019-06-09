@@ -125,3 +125,82 @@ body {
     padding-bottom:50px;
 }
 
+.top-one{
+    background-image:url("../images/Top1.png");
+    background-size:100% 100%;
+    height:200px;
+}
+.top-two {
+    background: url("../images/Top2.png");
+    background-size: 100% 100%;
+    height:200px;
+}
+.top-three {
+    background: url("../images/Top3.png");
+    background-size: 100% 100%;
+    height:200px;
+}
+.top-four {
+    background: url("../images/Top4.png");
+    background-size: 100% 100%;
+    height:200px;
+}
+.strength{
+    background: url("../images/Strength.png");
+    background-size: 100% 100%;
+    height: 130px;
+}
+.dexterity {
+    background: url("../images/Dexterity.png");
+    background-size: 100% 100%;
+    height: 130px;
+}
+.constitution {
+    background: url("../images/Constitution.png");
+    background-size: 100% 100%;
+    height: 130px;
+}
+.intelligence {
+    background: url("../images/Intelligence.png");
+    background-size: 100% 100%;
+    height: 130px;
+}
+.wisdom {
+    background: url("../images/Wisdom.png");
+    background-size: 100% 100%;
+    height: 130px;
+}
+.charisma {
+    background: url("../images/Charisma.png");
+    background-size: 100% 100%;
+    height: 130px;
+}
+.statbox{
+    position:relative;
+    top:30%;
+    left:1em;
+    width:60%;
+}
+.modlabel {
+    position: relative;
+    top: 70%;
+    right: 1.1em;
+}
+
+.inspiration {
+    background: url("../images/Inspiration.png");
+    background-size: 100% 100%;
+    height: 130px;
+}
+.savingThrows {
+    background: url("../images/SavingThrows.png");
+    background-size: 100% 100%;
+    height: 130px;
+}
+.skills {
+    background: url("../images/Skills.png");
+    background-size: 100% 100%;
+    height: 130px;
+}
+
+

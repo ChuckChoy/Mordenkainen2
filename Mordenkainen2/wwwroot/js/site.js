@@ -139,3 +139,30 @@ $(".container-fluid").on("change", ".sheetObj", function (e) {
 function timer() {
     setInterval(function () { savetimer = 0; }, 3000);
 }
+
+//changes the ability modifier under the stat number.
+$(".container-fluid").on("change", ".statbox", function (e) {
+    var modVal = Math.floor((e.target.value -10) / 2);
+    switch ($(this).attr("id")) {
+        case "CharacterSheet_Strength":
+            $("#strMod").html(modVal);
+            break;
+        case "CharacterSheet_Dexterity":
+            $("#dexMod").html(modVal);
+            break;
+        case "CharacterSheet_Constitution":
+            $("#conMod").html(modVal);
+            break;
+        case "CharacterSheet_Intelligence":
+            $("#intMod").html(modVal);
+            break;
+        case "CharacterSheet_Wisdom":
+            $("#wisMod").html(modVal);
+            break;
+        case "CharacterSheet_Charisma":
+            $("#chaMod").html(modVal);
+            break;
+        default:
+            return false;
+    }
+});
