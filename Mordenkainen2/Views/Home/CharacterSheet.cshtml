@@ -14,19 +14,19 @@
 </div>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-5 col-xl-5 top-one">            
+        <div class="col-sm-12 col-md-6 col-lg-5 col-xl-5 top-one">            
             <input asp-for="CharacterSheet.CharacterName" style="position:relative; left:7em; top:48%; height:2em;"/>
         </div>
-        <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 top-two">
+        <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 top-two">
             <input asp-for="CharacterSheet.Class" style="position:relative; left:1em; top:32%; width:50%" />
             <input asp-for="CharacterSheet.CharLevel" style="position:relative; left:2em; top:32%; width:25%;"/>
             <input asp-for="CharacterSheet.Race" style="position:relative; left:1em; top:43%; " />
         </div>
-        <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 top-three text-left">
+        <div class="col-sm-12 col-md-6 col-lg-2 col-xl-2 top-three text-left">
             <select asp-for="CharacterSheet.Background" style="position:relative; top:34%;"></select>
             <select asp-for="CharacterSheet.Alignment" style="position:relative; right:2em; top:60%; "></select>     
         </div>
-        <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 top-four text-left">
+        <div class="col-sm-12 col-md-6 col-lg-2 col-xl-2 top-four text-left">
             <input asp-for="CharacterSheet.PlayerName" style="position:relative; right:1em; top:32%; width:50%;" />
             <input asp-for="CharacterSheet.Experience" style="position:relative; right:1em; top:43%; width:75%;"/>
         </div>
@@ -61,9 +61,24 @@
                     </div>
                 </div>
                 <div id="saves_skills" class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div class="inspiration">
+                        <input asp-for="CharacterSheet.ProficiencyBonus" />
+                        <input asp-for="CharacterSheet.Inspiration" />
+                    </div>
+                    <div class="savingThrows"></div>
+                        <input asp-for="SavingThrows.StrSaveProf" type="checkbox" class="form-control" />
+                        <input asp-for="SavingThrows.StrSave" placeholder="ex. 1" class="form-control" />
+                        <input asp-for="SavingThrows.DexSaveProf" type="checkbox" class="form-control" />
+                        <input asp-for="SavingThrows.DexSave" placeholder="ex. 1" class="form-control" />
+                        <input asp-for="SavingThrows.ConSaveProf" type="checkbox" class="form-control" />
+                        <input asp-for="SavingThrows.ConSave" placeholder="ex. 1" class="form-control" />
+                        <input asp-for="SavingThrows.IntSaveProf" type="checkbox" class="form-control" />
+                        <input asp-for="SavingThrows.IntSave" placeholder="ex. 1" class="form-control" />
+                        <input asp-for="SavingThrows.WisSaveProf" type="checkbox" class="form-control" />
+                        <input asp-for="SavingThrows.WisSave" placeholder="ex. 1" class="form-control" />
+                        <input asp-for="SavingThrows.ChaSaveProf" type="checkbox" class="form-control" />
+                        <input asp-for="SavingThrows.ChaSave" placeholder="ex. 1" class="form-control" />
+                    <div class="skills"></div>
                 </div>
             </div>
             <div id="passiveWisdom">
