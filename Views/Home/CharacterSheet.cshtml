@@ -1,0 +1,142 @@
+﻿@model CharacterSheetViewModel
+@{
+    ViewData["Title"] = "CharacterSheet";
+    CharacterSheetViewModel character = new CharacterSheetViewModel();
+}
+
+
+<!--Note to self. Use inputs, all with the same id, then add an onchange event listener in javascript,
+    so that when any of the inputs change I can send it off in an https request. Then maybe put some sort of 
+    timer before the save triggers again?-->
+<div class="">
+    <span>Character selection</span>
+    <select id="characterSelect" width="50px">
+
+    </select>
+</div>
+<div class="container-fluid">
+    <h2>CharacterSheet</h2>
+    <label asp-for="CharacterSheet.CharLevel">Character Level</label>
+    <input asp-for="CharacterSheet.CharLevel" class="sheetObj" />
+</div>
+
+<div class="container-fluid">
+    <!--Header-->
+    <div class="row">
+        <div style="border: 1px solid black" class="col-md-4 col-12" id="CharacterName">
+            Character Name
+        </div>
+        <div style="border: 1px solid black" class="col-md-8 col-12">
+            <div class="row">
+                <div class="col-4">Class and Level</div>
+                <div class="col-4">Background</div>
+                <div class="col-4">Player name</div>
+                <div class="col-4">Race</div>
+                <div class="col-4">Alignment</div>
+                <div class="col-4">Experience Points</div>
+            </div>
+        </div>
+        <!--Column one: Skills, saving throws, and bonus profs.-->
+        <div class="col-md-4 col-12">
+            <div class="row">
+                <div style="border: 1px solid black" class="col-md-6 col-12">
+                    Ability Scores
+                    <div class="row">
+                        <div class="col-md-12 col-4">Strength</div>
+                        <div class="col-md-12 col-4">Dexterity</div>
+                        <div class="col-md-12 col-4">Constitution</div>
+                        <div class="col-md-12 col-4">Intelligence</div>
+                        <div class="col-md-12 col-4">Wisdom</div>
+                        <div class="col-md-12 col-4">Charisma</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12">
+                    <div style="border: 1px solid black" class="row">
+                        <div class="col-12">Proficiency Bonus</div>
+                    </div>
+                    <div style="border: 1px solid black" class="row">
+                        <div class="col-md-12 col-6">Strength</div>
+                        <div class="col-md-12 col-6">Dexterity</div>
+                        <div class="col-md-12 col-6">Constitution</div>
+                        <div class="col-md-12 col-6">Intelligence</div>
+                        <div class="col-md-12 col-6">Wisdom</div>
+                        <div class="col-md-12 col-6">Charisma</div>
+                        <b>Saving Throws</b>
+                    </div>
+                    <div style="border: 1px solid black" class="row">
+                        <div class="col-md-12 col-3">Acrobatics</div>
+                        <div class="col-md-12 col-3">Animal Handling</div>
+                        <div class="col-md-12 col-3">Arcana</div>
+                        <div class="col-md-12 col-3">Athletics</div>
+                        <div class="col-md-12 col-3">Deception</div>
+                        <div class="col-md-12 col-3">History</div>
+                        <div class="col-md-12 col-3">Insight</div>
+                        <div class="col-md-12 col-3">Intimidation</div>
+                        <div class="col-md-12 col-3">Investigation</div>
+                        <div class="col-md-12 col-3">Medicine</div>
+                        <div class="col-md-12 col-3">Nature</div>
+                        <div class="col-md-12 col-3">Perception</div>
+                        <div class="col-md-12 col-3">Performance</div>
+                        <div class="col-md-12 col-3">Persuasion</div>
+                        <div class="col-md-12 col-3">Religion</div>
+                        <div class="col-md-12 col-3">Slight Of Hand</div>
+                        <div class="col-md-12 col-3">Stealth</div>
+                        <div class="col-md-12 col-3">Survival</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12" style="border: 1px solid black">Bonus Proficiencies</div>
+            </div>
+        </div>
+        <!--Column two: Defense, Attacks, Equipment-->
+        <div class="col-md-4 col-12">
+            <div class="row">
+                <div class="col-4 text-center" style="border: 1px solid black">AC</div>
+                <div class="col-4 text-center" style="border: 1px solid black">Initiative</div>
+                <div class="col-4 text-center" style="border: 1px solid black">Speed</div>
+                <div class="col-12 text-center" style="border: 1px solid black">Current HP</div>
+                <div class="col-12 text-center" style="border: 1px solid black">Temp HP</div>
+                <div class="col-6 text-center" style="border: 1px solid black">Hit Dice</div>
+                <div class="col-6 text-center" style="border: 1px solid black">Death Saving Throws</div>
+                    
+                <div class="col-12" style="border: 1px solid black">Attacks and Spell Casting</div>
+
+                <div class="col-12" style="border: 1px solid black">
+                    <div class="row">
+                        <div class="col-4">Money</div>
+                        <div class="row">
+                            <div class="col-12">Platinum</div>
+                            <div class="col-12">Gold</div>
+                            <div class="col-12">Electrum</div>
+                            <div class="col-12">Silver</div>
+                            <div class="col-12">Copper</div>
+                        </div>
+                        <div class="col-8">
+                            Equipment
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--Column three: Character Traits, Features & Traits-->
+        <div class="col-md-4 col-12">
+            <div class="row">
+                    <div class="col-12" style="border: 1px solid black">Character Traits</div>
+                    <div class="col-12" style="border: 1px solid black">Ideals</div>
+                    <div class="col-12" style="border: 1px solid black">Bonds</div>
+                    <div class="col-12" style="border: 1px solid black">Flaws</div>
+                    <div class="col-12" style="border: 1px solid black">Featrues & Traits</div>
+            </div>
+        </div>
+        
+
+<script>
+$("#characterSelect").change(function (e) {
+    var actionUrl = "GetSelectedCharacter";
+    var data = e.target.value;
+    $.post(actionUrl, { charID: data } ,function (res) {
+        @character = res;
+    });
+});
+</script>

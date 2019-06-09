@@ -1,0 +1,506 @@
+﻿@model CharacterSheetViewModel
+@{
+    ViewData["Title"] = "CharacterCreation";
+}
+<h2>Character Creation</h2>
+<!--Note: need some way to page through multiple blocks of inputs. Ideas: partial views, -->
+<div class="container">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+       
+        <form id="reg" asp-controller="Home" asp-action="CreateCharacter" method="post">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-12 text-center"><h4>Main Info</h4></div>
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <label asp-for="CharacterSheet.CharacterName" class="control-label formText">Character Name</label>
+                            <input asp-for="CharacterSheet.CharacterName" class="form-control" placeholder="ex. Thoradin Fireforge" />
+                            <label asp-for="CharacterSheet.Class" class="control-label formText">Character Class</label>
+                            <input asp-for="CharacterSheet.Class" class="form-control" placeholder="ex. Paladin" />
+                            <label asp-for="CharacterSheet.CharLevel" class="control-label formText">Character Name</label>
+                            <input asp-for="CharacterSheet.CharLevel" class="form-control" placeholder="ex. 1" />
+                            <label asp-for="CharacterSheet.BackgroundID" class="control-label formText">Background</label>
+                            <select asp-for="CharacterSheet.Background" class="form-control"></select>
+                            <label asp-for="CharacterSheet.Race" class="control-label formText">Race</label>
+                            <input asp-for="CharacterSheet.Race" class="form-control" placeholder="ex. Dwarf" />
+                            <label asp-for="CharacterSheet.AlignmentID" class="control-label formText">Alignment</label>
+                            <select asp-for="CharacterSheet.Alignment" class="form-control"></select>
+                            <label asp-for="CharacterSheet.Experience" class="control-label formText">Experience</label>
+                            <input asp-for="CharacterSheet.Experience" class="form-control" placeholder="ex. 1000" />
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-12 text-center"><h4>Ability Scores</h4></div>
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <label asp-for="CharacterSheet.Strength" class="control-label formText">Strength</label>
+                            <input asp-for="CharacterSheet.Strength" class="form-control" placeholder="ex. 10" />
+                            <label asp-for="CharacterSheet.Dexterity" class="control-label formText">Dexterity</label>
+                            <input asp-for="CharacterSheet.Dexterity" class="form-control" placeholder="ex. 10" />
+                            <label asp-for="CharacterSheet.Constitution" class="control-label formText">Constitution</label>
+                            <input asp-for="CharacterSheet.Constitution" class="form-control" placeholder="ex. 10" />
+                            <label asp-for="CharacterSheet.Wisdom" class="control-label formText">Wisdom</label>
+                            <input asp-for="CharacterSheet.Wisdom" class="form-control" placeholder="ex. 10" />
+                            <label asp-for="CharacterSheet.Intelligence" class="control-label formText">Intellligence</label>
+                            <input asp-for="CharacterSheet.Intelligence" class="form-control" placeholder="ex. 10" />
+                            <label asp-for="CharacterSheet.Charisma" class="control-label formText">Charisma</label>
+                            <input asp-for="CharacterSheet.Charisma" class="form-control" placeholder="ex. 10" />
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-12 text-center"><h4>Saving Throws</h4></div>
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <label asp-for="CharacterSheet.Inspiration" class="control-label formText">Inspiration</label>
+                            <input asp-for="CharacterSheet.Inspiration" class="form-control" placeholder="ex. 10" />
+                            <label asp-for="CharacterSheet.ProficiencyBonus" class="control-label formText">Proficiency Bonus</label>
+                            <input asp-for="CharacterSheet.ProficiencyBonus" class="form-control" placeholder="ex. 10" />
+                            <div class="table-responsive">
+                                <table class="table table-striped table-sm center-data">
+                                    <thead>
+                                        <tr>
+                                            <td>Prof.</td>
+                                            <td>#</td>
+                                            <td>Type</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input asp-for="SavingThrows.StrSaveProf" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="SavingThrows.StrSave" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="SavingThrows.StrSaveProf" class="control-label form-text">Strength</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="SavingThrows.DexSaveProf" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="SavingThrows.DexSave" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="SavingThrows.DexSaveProf" class="control-label form-text">Dexterity</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="SavingThrows.ConSaveProf" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="SavingThrows.ConSave" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="SavingThrows.ConSaveProf" class="control-label form-text">Constitution</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="SavingThrows.WisSaveProf" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="SavingThrows.WisSave" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="SavingThrows.WisSaveProf" class="control-label form-text">Wisdom</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="SavingThrows.IntSaveProf" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="SavingThrows.IntSave" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="SavingThrows.IntSaveProf" class="control-label form-text">Intelligence</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="SavingThrows.ChaSaveProf" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="SavingThrows.ChaSave" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="SavingThrows.ChaSaveProf" class="control-label form-text">Charisma</label></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-12 text-center"><h4>Skills</h4></div>
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-sm center-data">
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="checkbox" class="form-control" /></td>
+                                        <tr>
+                                            <td><input asp-for="Skills.Acrobatics" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Acrobatics" class="control-label form-text">Acrobatics</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.AnimalHandling" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.AnimalHandling" class="control-label form-text">Animal Handling</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Arcana" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Arcana" class="control-label form-text">Arcana</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Athletics" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Athletics" class="control-label form-text">Athletics</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Deception" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Deception" class="control-label form-text">Deception</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.History" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.History" class="control-label form-text">History</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Insight" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Insight" class="control-label form-text">Insight</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Intimidation" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Intimidation" class="control-label form-text">Intimidation</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Investigation" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Investigation" class="control-label form-text">Investigation</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Medicine" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Medicine" class="control-label form-text">Medicine</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Nature" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Nature" class="control-label form-text">Nature</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Perception" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Perception" class="control-label form-text">Perception</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Performance" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Performance" class="control-label form-text">Performance</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Persuasion" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Persuasion" class="control-label form-text">Persuasion</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Religion" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Religion" class="control-label form-text">Religion</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Sleight" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Sleight" class="control-label form-text">Sleight Of Hand</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Stealth" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Stealth" class="control-label form-text">Stealth</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Survival" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Survival" class="control-label form-text">Survival</label></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-12 text-center"><h4>Defensive Core</h4></div>
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-sm center-data">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <label asp-for="CharacterSheet.ArmorClass" class="control-label formText">Armor Class</label>
+                                                <input asp-for="CharacterSheet.ArmorClass" class="form-control" placeholder="ex. 10" />
+                                            </td>
+                                            <td>
+                                                <label asp-for="CharacterSheet.Speed" class="control-label formText">Speed</label>
+                                                <input asp-for="CharacterSheet.Speed" class="form-control" placeholder="ex. 30" />
+                                            </td>
+                                            <td>
+                                                <label asp-for="CharacterSheet.Initiative" class="control-label formText">Initiative</label>
+                                                <input asp-for="CharacterSheet.Initiative" class="form-control" placeholder="ex. +0" />
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <label asp-for="CharacterSheet.HitPoints" class="control-label formText">Current Hit Points</label>
+                                                <input asp-for="CharacterSheet.HitPoints" class="form-control" placeholder="ex. 9" />
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <label asp-for="CharacterSheet.TempHitPoints" class="control-label formText">Temporary Hit Points</label>
+                                                <input asp-for="CharacterSheet.TempHitPoints" class="form-control" placeholder="ex. 0" />
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label asp-for="CharacterSheet.HitDie" class="control-label formText">Hit Dice</label>
+                                                <input asp-for="CharacterSheet.HitDie" class="form-control" placeholder="ex. 9" />
+                                            </td>
+                                            <td>
+                                                <label asp-for="CharacterSheet.DeathSaveFailure" class="control-label formText">Death Save Failures</label>
+                                                <input asp-for="CharacterSheet.DeathSaveFailure" class="form-control" placeholder="ex. 0" />
+                                            </td>
+                                            <td>
+                                                <label asp-for="CharacterSheet.DeathSaveSuccess" class="control-label formText">Death Save Successes</label>
+                                                <input asp-for="CharacterSheet.DeathSaveSuccess" class="form-control" placeholder="ex. 0" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-12 text-center"><h4>Attacks And Spells</h4></div>
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-sm center-data">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <label asp-for="CharacterSheet.Attacks" class="control-label formText">Attack</label>
+                                                <input asp-for="CharacterSheet.Attacks" class="form-control" placeholder="Longsword(1d8) +5 Slashing" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label asp-for="CharacterSheet.Attacks" class="control-label formText">Attack</label>
+                                                <input asp-for="CharacterSheet.Attacks" class="form-control" placeholder="Longsword(1d8) +5 Slashing" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label asp-for="CharacterSheet.Attacks" class="control-label formText">Attack</label>
+                                                <input asp-for="CharacterSheet.Attacks" class="form-control" placeholder="Longsword(1d8) +5 Slashing" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-12 text-center"><h4>Traits, Bonds, Ideals and Flaws</h4></div>
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-sm center-data">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <label asp-for="CharacterSheet.PersonalityTraits" class="control-label formText">Personality Traits</label>
+                                                <input asp-for="CharacterSheet.PersonalityTraits" class="form-control" placeholder="I wrestled an ogre for the fun of it" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label asp-for="CharacterSheet.Bonds" class="control-label formText">Bonds</label>
+                                                <input asp-for="CharacterSheet.Bonds" class="form-control" placeholder="My personal image is of utmost import" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label asp-for="CharacterSheet.Ideals" class="control-label formText">Ideals</label>
+                                                <input asp-for="CharacterSheet.Ideals" class="form-control" placeholder="As above, so below" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label asp-for="CharacterSheet.Flaws" class="control-label formText">Ideals</label>
+                                                <input asp-for="CharacterSheet.Flaws" class="form-control" placeholder="I would never risk my reputation" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-12 text-center"><h4>Features and Traits, Other Proficiencies, and Passive Wisdom</h4></div>
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-sm center-data">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <label asp-for="CharacterSheet.Features" class="control-label formText">Features & Traits</label>
+                                                <input asp-for="CharacterSheet.Features" class="form-control" placeholder="ex. Fey Ancestry, Multiattack" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label asp-for="CharacterSheet.Proficiencies.Weapons" class="control-label formText">Weapon Proficiencies</label>
+                                                <input asp-for="CharacterSheet.Proficiencies.Weapons" class="form-control" placeholder="ex. Simple Weapons, Shortswords" />
+                                            </td>
+                                            <td>
+                                                <label asp-for="CharacterSheet.Proficiencies.Armor" class="control-label formText">Armor Proficiencies</label>
+                                                <input asp-for="CharacterSheet.Proficiencies.Armor" class="form-control" placeholder="ex. Light Armor" />
+                                            </td>
+                                            <td>
+                                                <label asp-for="CharacterSheet.Proficiencies.Tools" class="control-label formText">Tool Proficiencies</label>
+                                                <input asp-for="CharacterSheet.Proficiencies.Tools" class="form-control" placeholder="ex. Thieves Tools, Hammers" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label asp-for="CharacterSheet.PassiveWisdom" class="control-label formText">Passive Wisdom</label>
+                                                <input asp-for="CharacterSheet.PassiveWisdom" class="form-control" placeholder="ex. 10" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-12 text-center"><h4>Items and Money</h4></div>
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-sm center-data">
+                                    <tbody>
+                                        <tr class="visible-md visible-lg">
+                                            <td>
+                                                <label asp-for="CharacterSheet.Money.Platinum" class="control-label formText">Platinum</label>
+                                                <input asp-for="CharacterSheet.Money.Platinum" class="form-control" placeholder="0" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label asp-for="CharacterSheet.Money.Gold" class="control-label formText">Gold</label>
+                                                <input asp-for="CharacterSheet.Money.Gold" class="form-control" placeholder="0" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label asp-for="CharacterSheet.Money.Electrum" class="control-label formText">Electrum</label>
+                                                <input asp-for="CharacterSheet.Money.Electrum" class="form-control" placeholder="0" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label asp-for="CharacterSheet.Money.Silver" class="control-label formText">Silver</label>
+                                                <input asp-for="CharacterSheet.Money.Silver" class="form-control" placeholder="0" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label asp-for="CharacterSheet.Money.Copper" class="control-label formText">Copper</label>
+                                                <input asp-for="CharacterSheet.Money.Copper" class="form-control" placeholder="0" />
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <label asp-for="CharacterSheet.Equipment" class="control-label formText">Equipment</label>
+                                                <input asp-for="CharacterSheet.Equipment" class="form-control" placeholder="ex. 10" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-12 text-center"><h4>Character Appearance</h4></div>
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-sm center-data">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <label asp-for="Appearance.Age" class="control-label formText">Age</label>
+                                                <input asp-for="Appearance.Age" class="form-control" placeholder="25" />
+                                            </td>
+                                            <td>
+                                                <label asp-for="Appearance.Height" class="control-label formText">Height</label>
+                                                <input asp-for="Appearance.Height" class="form-control" placeholder="72 in" />
+                                            </td>
+                                            <td>
+                                                <label asp-for="Appearance.CharWeight" class="control-label formText">Weight</label>
+                                                <input asp-for="Appearance.CharWeight" class="form-control" placeholder="150 lbs" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label asp-for="Appearance.Eyes" class="control-label formText">Eye Color</label>
+                                                <input asp-for="Appearance.Eyes" class="form-control" placeholder="Rich Green" />
+                                            </td>
+                                            <td>
+                                                <label asp-for="Appearance.Skin" class="control-label formText">Skin Color</label>
+                                                <input asp-for="Appearance.Skin" class="form-control" placeholder="Brown" />
+                                            </td>
+                                            <td>
+                                                <label asp-for="Appearance.Hair" class="control-label formText">Hair Color</label>
+                                                <input asp-for="Appearance.Hair" class="form-control" placeholder="Silver" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <label asp-for="Appearance.General" class="control-label formText">Overall Appearance</label>
+                                                <input asp-for="Appearance.General" class="form-control" placeholder="I have a scar over my brow, and a peg leg." />
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
+            </ol>
+    </div>
+</div>
