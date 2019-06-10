@@ -162,6 +162,7 @@ namespace Mordenkainen2.Models
         public byte Initiative { get; set; }
         public byte Speed { get; set; }
         public int HitPoints { get; set; }
+        public int TemporaryHP { get; set; }
         public byte HitDie { get; set; }
         public string HitDieType { get; set; }
         public byte DeathSaveSuccess { get; set; }

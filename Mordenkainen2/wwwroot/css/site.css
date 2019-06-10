@@ -201,11 +201,11 @@ body {
     background-size: 100% 100%;
     height: 470px;
 }
-.skill-checkbox{
+.saves-checkbox{
     position:relative;
     left:1.2em;
 }
-.skill-check {
+.saves-check {
     position:relative;
     left:2em;
     width: 10%;
@@ -221,6 +221,47 @@ body {
 
 .no-Spinner {
     -moz-appearance: textfield;
+}
+.skill-checkbox {
+    position: relative;
+    left: 1.2em;
+}
+.skill-check {
+    position: relative;
+    left: 1.9em;
+    width: 10%;
+    height: 1.4em;
+    font-size: small;
+}
+.passive_wisdom {
+    background: url("../images/Passive_Wisdom.png");
+    background-size: 100% 100%;
+    height: 330px;
+}
+.armorClass {
+    background: url("../images/ArmorClass.png");
+    background-size: 100% 100%;
+    height: 450px;
+}
+.attacks {
+    background: url("../images/Attacks.png");
+    background-size: 100% 100%;
+    height: 350px;
+}
+.equipment {
+    background: url("../images/Equipment.png");
+    background-size: 100% 100%;
+    height: 330px;
+}
+.traits {
+    background: url("../images/Traits.png");
+    background-size: 100% 100%;
+    height: 450px;
+}
+.features {
+    background: url("../images/Features.png");
+    background-size: 100% 100%;
+    height: 680px;
 }
 
 

@@ -66,34 +66,98 @@
                         <input asp-for="CharacterSheet.ProficiencyBonus" class="no-Spinner" style="position:relative; top:42%; width:15%; left:0.9em" />
                     </div>
                     <div class="savingThrows">
-                        <input asp-for="SavingThrows.StrSaveProf" type="checkbox" class="skill-checkbox" style="top:7%;" />
-                        <input asp-for="SavingThrows.StrSave" class="no-Spinner skill-check" style="top:7%" /><br />
-                        <input asp-for="SavingThrows.DexSaveProf" type="checkbox" class="skill-checkbox" style="top:7%;" />
-                        <input asp-for="SavingThrows.DexSave" class="no-Spinner skill-check" style="top:7%" /><br />
-                        <input asp-for="SavingThrows.ConSaveProf" type="checkbox" class="skill-checkbox" style="top:8%;" />
-                        <input asp-for="SavingThrows.ConSave" class="no-Spinner skill-check" style="top:8%" /><br />
-                        <input asp-for="SavingThrows.IntSaveProf" type="checkbox" class="skill-checkbox" style="top:8%;" />
-                        <input asp-for="SavingThrows.IntSave" class="no-Spinner skill-check" style="top:8%" /><br />
-                        <input asp-for="SavingThrows.WisSaveProf" type="checkbox" class="skill-checkbox" style="top:9%;" />
-                        <input asp-for="SavingThrows.WisSave" class="no-Spinner skill-check" style="top:9%" /><br />
-                        <input asp-for="SavingThrows.ChaSaveProf" type="checkbox" class="skill-checkbox" style="top:9%;" />
-                        <input asp-for="SavingThrows.ChaSave" class="no-Spinner skill-check" style="top:9%" />
+                        <input asp-for="SavingThrows.StrSaveProf" type="checkbox" class="saves-checkbox" style="top:7%;" />
+                        <input asp-for="SavingThrows.StrSave" class="no-Spinner saves-check" style="top:7%" /><br />
+                        <input asp-for="SavingThrows.DexSaveProf" type="checkbox" class="saves-checkbox" style="top:7%;" />
+                        <input asp-for="SavingThrows.DexSave" class="no-Spinner saves-check" style="top:7%" /><br />
+                        <input asp-for="SavingThrows.ConSaveProf" type="checkbox" class="saves-checkbox" style="top:8%;" />
+                        <input asp-for="SavingThrows.ConSave" class="no-Spinner saves-check" style="top:8%" /><br />
+                        <input asp-for="SavingThrows.IntSaveProf" type="checkbox" class="saves-checkbox" style="top:8%;" />
+                        <input asp-for="SavingThrows.IntSave" class="no-Spinner saves-check" style="top:8%" /><br />
+                        <input asp-for="SavingThrows.WisSaveProf" type="checkbox" class="saves-checkbox" style="top:9%;" />
+                        <input asp-for="SavingThrows.WisSave" class="no-Spinner saves-check" style="top:9%" /><br />
+                        <input asp-for="SavingThrows.ChaSaveProf" type="checkbox" class="saves-checkbox" style="top:10%;" />
+                        <input asp-for="SavingThrows.ChaSave" class="no-Spinner saves-check" style="top:9%" />
                     </div>
-                    <div class="skills"></div>
+                    <div class="skills">
+                        <input asp-for="Skills.Acrobatics_T" type="checkbox" class="skill-checkbox" style="top:4.5%;" />
+                        <input asp-for="Skills.Acrobatics" class="no-Spinner skill-check" style="top:3.5%" /><br />
+                        <input asp-for="Skills.AnimalHandling_T" type="checkbox" class="skill-checkbox" style="top:4%;" />
+                        <input asp-for="Skills.AnimalHandling" class="no-Spinner skill-check" style="top:3%" /><br />
+                        <input asp-for="Skills.Arcana_T" type="checkbox" class="skill-checkbox" style="top:4%;" />
+                        <input asp-for="Skills.Arcana" class="no-Spinner skill-check" style="top:3%" /><br />
+                        <input asp-for="Skills.Athletics_T" type="checkbox" class="skill-checkbox" style="top:4%;" />
+                        <input asp-for="Skills.Athletics" class="no-Spinner skill-check" style="top:3%" /><br />
+                        <input asp-for="Skills.Deception_T" type="checkbox" class="skill-checkbox" style="top:3.5%;" />
+                        <input asp-for="Skills.Deception" class="no-Spinner skill-check" style="top:2.5%" /><br />
+                        <input asp-for="Skills.History_T" type="checkbox" class="skill-checkbox" style="top:3.5%;" />
+                        <input asp-for="Skills.History" class="no-Spinner skill-check" style="top:2.5%" /><br />
+                        <input asp-for="Skills.Insight_T" type="checkbox" class="skill-checkbox" style="top:3%;" />
+                        <input asp-for="Skills.Insight" class="no-Spinner skill-check" style="top:2.2%" /><br />
+                        <input asp-for="Skills.Intimidation_T" type="checkbox" class="skill-checkbox" style="top:3%;" />
+                        <input asp-for="Skills.Intimidation" class="no-Spinner skill-check" style="top:2.2%" /><br />
+                        <input asp-for="Skills.Investigation_T" type="checkbox" class="skill-checkbox" style="top:2.8%;" />
+                        <input asp-for="Skills.Investigation" class="no-Spinner skill-check" style="top:2%" /><br />
+                        <input asp-for="Skills.Medicine_T" type="checkbox" class="skill-checkbox" style="top:2.5%;" />
+                        <input asp-for="Skills.Medicine" class="no-Spinner skill-check" style="top:1.7%" /><br />
+                        <input asp-for="Skills.Nature_T" type="checkbox" class="skill-checkbox" style="top:2.5%;" />
+                        <input asp-for="Skills.Nature" class="no-Spinner skill-check" style="top:1.6%" /><br />
+                        <input asp-for="Skills.Perception_T" type="checkbox" class="skill-checkbox" style="top:2.2%;" />
+                        <input asp-for="Skills.Perception" class="no-Spinner skill-check" style="top:1.2%" /><br />
+                        <input asp-for="Skills.Performance_T" type="checkbox" class="skill-checkbox" style="top:2%;" />
+                        <input asp-for="Skills.Performance" class="no-Spinner skill-check" style="top:1.1%" /><br />
+                        <input asp-for="Skills.Persuasion_T" type="checkbox" class="skill-checkbox" style="top:1.8%;" />
+                        <input asp-for="Skills.Persuasion" class="no-Spinner skill-check" style="top:0.8%" /><br />
+                        <input asp-for="Skills.Religion_T" type="checkbox" class="skill-checkbox" style="top:1.5%;" />
+                        <input asp-for="Skills.Religion" class="no-Spinner skill-check" style="top:0.6%" /><br />
+                        <input asp-for="Skills.Sleight_T" type="checkbox" class="skill-checkbox" style="top:1.2%;" />
+                        <input asp-for="Skills.Sleight" class="no-Spinner skill-check" style="top:0.4%" /><br />
+                        <input asp-for="Skills.Stealth_T" type="checkbox" class="skill-checkbox" style="top:1%;" />
+                        <input asp-for="Skills.Stealth" class="no-Spinner skill-check" style="top:0.2%" /><br />
+                        <input asp-for="Skills.Survival_T" type="checkbox" class="skill-checkbox" style="top:0.6%;" />
+                        <input asp-for="Skills.Survival" class="no-Spinner skill-check" style="top:0.1%;" /><br />
+
+                    </div>
                 </div>
             </div>
-            <div id="passiveWisdom">
-                
+            <div id="passiveWisdom" class="passive_wisdom">
+                <input asp-for="CharacterSheet.PassiveWisdom" />
+                <input asp-for="Proficiencies.Armor" />
+                <input asp-for="Proficiencies.Weapons" />
+                <input asp-for="Proficiencies.Tools" />
             </div>
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
-            <div id="armorClass"></div>
-            <div id="attacks"></div>
-            <div id="equipment"></div>
+            <div id="armorClass" class="armorClass">
+                <input asp-for="CharacterSheet.ArmorClass" />
+                <input asp-for="CharacterSheet.Initiative" />
+                <input asp-for="CharacterSheet.Speed" />
+                <input asp-for="CharacterSheet.HitPoints" />
+                <input asp-for="CharacterSheet.TemporaryHP" />
+                <input asp-for="CharacterSheet.HitDie" />
+                <input asp-for="CharacterSheet.HitDieType" />
+                <input asp-for="CharacterSheet.DeathSaveSuccess" />
+                <input asp-for="CharacterSheet.DeathSaveFailure" />
+            </div>
+            <div id="attacks" class="attacks"></div>
+                <textarea asp-for="CharacterSheet.Attacks"></textarea>
+                <div id="equipment" class="equipment">
+                    <input asp-for="Money.Copper" />
+                    <input asp-for="Money.Silver" />
+                    <input asp-for="Money.Electrum" />
+                    <input asp-for="Money.Gold" />
+                    <input asp-for="Money.Platinum" />
+                    <textarea asp-for="CharacterSheet.Equipment"></textarea>
+                </div>
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
-            <div id="traits"></div>
-            <div id="features"></div>
+            <div id="traits" class="traits">
+                <textarea asp-for="CharacterSheet.PersonalityTraits"></textarea>
+                <textarea asp-for="CharacterSheet.Ideals"></textarea>
+                <textarea asp-for="CharacterSheet.Bonds"></textarea>
+                <textarea asp-for="CharacterSheet.Flaws"></textarea>
+            </div>
+            <div id="features" class="features"></div>
         </div>
     </div>
 </div>
