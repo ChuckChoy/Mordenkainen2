@@ -121,34 +121,37 @@
                 </div>
             </div>
             <div id="passiveWisdom" class="passive_wisdom">
-                <input asp-for="CharacterSheet.PassiveWisdom" />
-                <input asp-for="Proficiencies.Armor" />
-                <input asp-for="Proficiencies.Weapons" />
-                <input asp-for="Proficiencies.Tools" />
+                <input asp-for="CharacterSheet.PassiveWisdom" style="position:relative; top:4%; width:10%; left:1em;" /><br />
+                <input asp-for="Proficiencies.Armor" style="position:relative; top:15%; left:1em;" /><br />
+                <input asp-for="Proficiencies.Weapons" style="position:relative; top:20%; left:1em;" /><br />
+                <input asp-for="Proficiencies.Tools" style="position:relative; top:25%; left:1em;" /><br />
+                <input asp-for="Proficiencies.Languages" style="position:relative; top:30%; left:1em;" /><br />
             </div>
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
             <div id="armorClass" class="armorClass">
-                <input asp-for="CharacterSheet.ArmorClass" />
-                <input asp-for="CharacterSheet.Initiative" />
-                <input asp-for="CharacterSheet.Speed" />
-                <input asp-for="CharacterSheet.HitPoints" />
-                <input asp-for="CharacterSheet.TemporaryHP" />
-                <input asp-for="CharacterSheet.HitDie" />
-                <input asp-for="CharacterSheet.HitDieType" />
-                <input asp-for="CharacterSheet.DeathSaveSuccess" />
-                <input asp-for="CharacterSheet.DeathSaveFailure" />
+                <input asp-for="CharacterSheet.ArmorClass" style="position:relative; top:10%; left:3em; width:15%" />
+                <input asp-for="CharacterSheet.Initiative" style="position:relative; top:10%; left:6em; width:15%;" />
+                <input asp-for="CharacterSheet.Speed" style="position:relative; top:10%; left:9em; width:15%;" /><br />
+                <input asp-for="CharacterSheet.MaxHP" style="position:relative; top:23%; left:10em; width:25%;" /><br />
+                <input asp-for="CharacterSheet.HitPoints" style="position:relative; top:26%; left:4em;" /><br />
+                <input asp-for="CharacterSheet.TemporaryHP" style="position:relative; top:40%; left:4em;" /><br />
+                <input asp-for="CharacterSheet.HitDie" style="position:relative; top:50%; left:4em; width:20%" />
+                <input asp-for="CharacterSheet.DeathSaveSuccess" style="position:relative; top:50%; left:9em; width:30%;" /><br />
+                <input asp-for="CharacterSheet.HitDieType" style="position:relative; top:65%; left:1em; width:20%" />
+                <input asp-for="CharacterSheet.DeathSaveFailure" style="position:relative; top:65%; left:3em;" />
             </div>
-            <div id="attacks" class="attacks"></div>
+            <div id="attacks" class="attacks">
                 <textarea asp-for="CharacterSheet.Attacks"></textarea>
-                <div id="equipment" class="equipment">
-                    <input asp-for="Money.Copper" />
-                    <input asp-for="Money.Silver" />
-                    <input asp-for="Money.Electrum" />
-                    <input asp-for="Money.Gold" />
-                    <input asp-for="Money.Platinum" />
-                    <textarea asp-for="CharacterSheet.Equipment"></textarea>
-                </div>
+            </div>
+            <div id="equipment" class="equipment">
+                <input asp-for="Money.Copper" />
+                <input asp-for="Money.Silver" />
+                <input asp-for="Money.Electrum" />
+                <input asp-for="Money.Gold" />
+                <input asp-for="Money.Platinum" />
+                <textarea asp-for="CharacterSheet.Equipment"></textarea>
+            </div>
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
             <div id="traits" class="traits">

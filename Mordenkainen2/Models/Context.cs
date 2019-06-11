@@ -161,6 +161,7 @@ namespace Mordenkainen2.Models
         public byte ArmorClass { get; set; }
         public byte Initiative { get; set; }
         public byte Speed { get; set; }
+        public int MaxHP { get; set; }
         public int HitPoints { get; set; }
         public int TemporaryHP { get; set; }
         public byte HitDie { get; set; }
@@ -319,6 +320,7 @@ namespace Mordenkainen2.Models
         public string Armor { get; set; }
         public string Weapons { get; set; }
         public string Tools { get; set; }
+        public string Languages { get; set; }
 
         public CharacterSheet CharacterSheet { get; set; }
     }
