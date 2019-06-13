@@ -98,8 +98,8 @@ namespace Mordenkainen2.Controllers
         public JsonResult GetCharacterSelection()
         {
             //get session variable from Session
-            int? userID = HttpContext.Session.GetInt32("_UserID");
-            //int? userID = 1;//for test.
+            //int? userID = HttpContext.Session.GetInt32("_UserID"); //actual
+            int? userID = 1;//for test.
             //check if user is logged in.
             if (userID == null)
                 //if not, return null cause there are no characters to send back.
@@ -119,8 +119,8 @@ namespace Mordenkainen2.Controllers
             //set character selection
             HttpContext.Session.SetInt32("_CharacterID", (int)charID);
             //get userid from session
-            int userID = (int)HttpContext.Session.GetInt32("_UserID");
-            //int userID = 1;//for testing
+            //int userID = (int)HttpContext.Session.GetInt32("_UserID"); //actual
+            int userID = 1;//for testing
             //get CharacterSheetViewModel with a query
             CharacterSheetViewModel character = EFQueries.GetCharacter(userID, (int)charID);
             //return object and the OK http code

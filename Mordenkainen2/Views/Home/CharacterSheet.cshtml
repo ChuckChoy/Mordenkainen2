@@ -17,16 +17,16 @@
         <div class="col-sm-12 col-md-6 col-lg-5 col-xl-5 top-one">            
             <input asp-for="CharacterSheet.CharacterName" style="position:relative; left:7em; top:48%; height:2em;"/>
         </div>
-        <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 top-two">
+        <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3 top-two">
             <input asp-for="CharacterSheet.Class" style="position:relative; left:1em; top:32%; width:50%" />
             <input asp-for="CharacterSheet.CharLevel" style="position:relative; left:2em; top:32%; width:25%;"/>
             <input asp-for="CharacterSheet.Race" style="position:relative; left:1em; top:43%; " />
         </div>
-        <div class="col-sm-12 col-md-6 col-lg-2 col-xl-2 top-three text-left">
+        <div class="col-sm-12 col-md-4 col-lg-2 col-xl-2 top-three text-left">
             <select asp-for="CharacterSheet.Background" style="position:relative; top:34%;"></select>
             <select asp-for="CharacterSheet.Alignment" style="position:relative; right:2em; top:60%; "></select>     
         </div>
-        <div class="col-sm-12 col-md-6 col-lg-2 col-xl-2 top-four text-left">
+        <div class="col-sm-12 col-md-4 col-lg-2 col-xl-2 top-four text-left">
             <input asp-for="CharacterSheet.PlayerName" style="position:relative; right:1em; top:32%; width:50%;" />
             <input asp-for="CharacterSheet.Experience" style="position:relative; right:1em; top:43%; width:75%;"/>
         </div>
@@ -36,27 +36,27 @@
             <div class="row">
                 <div id="stats" class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
                     <div class="strength">
-                        <input asp-for="CharacterSheet.Strength" class="statbox" />
+                        <input asp-for="CharacterSheet.Strength" class="statbox no-Spinner" />
                         <label id="strMod" class="modlabel"></label>
                     </div>
                     <div class="dexterity">
-                        <input asp-for="CharacterSheet.Dexterity" class="statbox" />
+                        <input asp-for="CharacterSheet.Dexterity" class="statbox no-Spinner" />
                         <label id="dexMod" class="modlabel"></label>
                     </div>
                     <div class="constitution">
-                        <input asp-for="CharacterSheet.Constitution" class="statbox" />
+                        <input asp-for="CharacterSheet.Constitution" class="statbox no-Spinner" />
                         <label id="conMod" class="modlabel"></label>
                     </div>
                     <div class="intelligence">
-                        <input asp-for="CharacterSheet.Intelligence" class="statbox" />
+                        <input asp-for="CharacterSheet.Intelligence" class="statbox no-Spinner" />
                         <label id="intMod" class="modlabel"></label>
                     </div>
                     <div class="wisdom">
-                        <input asp-for="CharacterSheet.Wisdom" class="statbox" />
+                        <input asp-for="CharacterSheet.Wisdom" class="statbox no-Spinner" />
                         <label id="wisMod" class="modlabel"></label>
                     </div>
                     <div class="charisma">
-                        <input asp-for="CharacterSheet.Charisma" class="statbox" />
+                        <input asp-for="CharacterSheet.Charisma" class="statbox no-Spinner" />
                         <label id="chaMod" class="modlabel"></label>
                     </div>
                 </div>
@@ -66,18 +66,18 @@
                         <input asp-for="CharacterSheet.ProficiencyBonus" class="no-Spinner" style="position:relative; top:42%; width:15%; left:0.9em" />
                     </div>
                     <div class="savingThrows">
-                        <input asp-for="SavingThrows.StrSaveProf" type="checkbox" class="saves-checkbox" style="top:7%;" />
-                        <input asp-for="SavingThrows.StrSave" class="no-Spinner saves-check" style="top:7%" /><br />
-                        <input asp-for="SavingThrows.DexSaveProf" type="checkbox" class="saves-checkbox" style="top:7%;" />
-                        <input asp-for="SavingThrows.DexSave" class="no-Spinner saves-check" style="top:7%" /><br />
-                        <input asp-for="SavingThrows.ConSaveProf" type="checkbox" class="saves-checkbox" style="top:8%;" />
-                        <input asp-for="SavingThrows.ConSave" class="no-Spinner saves-check" style="top:8%" /><br />
-                        <input asp-for="SavingThrows.IntSaveProf" type="checkbox" class="saves-checkbox" style="top:8%;" />
-                        <input asp-for="SavingThrows.IntSave" class="no-Spinner saves-check" style="top:8%" /><br />
-                        <input asp-for="SavingThrows.WisSaveProf" type="checkbox" class="saves-checkbox" style="top:9%;" />
-                        <input asp-for="SavingThrows.WisSave" class="no-Spinner saves-check" style="top:9%" /><br />
-                        <input asp-for="SavingThrows.ChaSaveProf" type="checkbox" class="saves-checkbox" style="top:10%;" />
-                        <input asp-for="SavingThrows.ChaSave" class="no-Spinner saves-check" style="top:9%" />
+                        <input asp-for="SavingThrows.StrSaveProf" type="checkbox" class="saves-checkbox" style="top:6.5%;" />
+                        <input asp-for="SavingThrows.StrSave" class="no-Spinner saves-check"  style="top:5%;" /><br />
+                        <input asp-for="SavingThrows.DexSaveProf" type="checkbox" class="saves-checkbox" style="top:7.5%;" />
+                        <input asp-for="SavingThrows.DexSave" class="no-Spinner saves-check"  style="top:5.5%;"/><br />
+                        <input asp-for="SavingThrows.ConSaveProf" type="checkbox" class="saves-checkbox" style="top:7.8%;" />
+                        <input asp-for="SavingThrows.ConSave" class="no-Spinner saves-check"  style="top:6.5%;"/><br />
+                        <input asp-for="SavingThrows.IntSaveProf" type="checkbox" class="saves-checkbox" style="top:8.5%;" />
+                        <input asp-for="SavingThrows.IntSave" class="no-Spinner saves-check"  style="top:7.2%;"/><br />
+                        <input asp-for="SavingThrows.WisSaveProf" type="checkbox" class="saves-checkbox" style="top:9.3%;" />
+                        <input asp-for="SavingThrows.WisSave" class="no-Spinner saves-check"  style="top:7.5%;"/><br />
+                        <input asp-for="SavingThrows.ChaSaveProf" type="checkbox" class="saves-checkbox" style="top:9.8%;" />
+                        <input asp-for="SavingThrows.ChaSave" class="no-Spinner saves-check"  style="top:7.9%;"/>
                     </div>
                     <div class="skills">
                         <input asp-for="Skills.Acrobatics_T" type="checkbox" class="skill-checkbox" style="top:4.5%;" />
@@ -121,46 +121,55 @@
                 </div>
             </div>
             <div id="passiveWisdom" class="passive_wisdom">
-                <input asp-for="CharacterSheet.PassiveWisdom" style="position:relative; top:4%; width:10%; left:1em;" /><br />
-                <input asp-for="Proficiencies.Armor" style="position:relative; top:15%; left:1em;" /><br />
-                <input asp-for="Proficiencies.Weapons" style="position:relative; top:20%; left:1em;" /><br />
-                <input asp-for="Proficiencies.Tools" style="position:relative; top:25%; left:1em;" /><br />
-                <input asp-for="Proficiencies.Languages" style="position:relative; top:30%; left:1em;" /><br />
+                <input asp-for="CharacterSheet.PassiveWisdom" style="position:relative; top:3.9%; width:85%; left:3.5%;" /><br />
+                <label class="pW-label" >Armor</label><br />
+                <input asp-for="Proficiencies.Armor" class="pW-input" /><br />
+                <label class="pW-label">Weapons</label><br />
+                <input asp-for="Proficiencies.Weapons" class="pW-input" /><br />
+                <label class="pW-label">Tools</label><br />
+                <input asp-for="Proficiencies.Tools" class="pW-input" /><br />
+                <label class="pW-label">Languages</label><br />
+                <input asp-for="Proficiencies.Languages" class="pW-input" /><br />
             </div>
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
             <div id="armorClass" class="armorClass">
-                <input asp-for="CharacterSheet.ArmorClass" style="position:relative; top:10%; left:3em; width:15%" />
-                <input asp-for="CharacterSheet.Initiative" style="position:relative; top:10%; left:6em; width:15%;" />
-                <input asp-for="CharacterSheet.Speed" style="position:relative; top:10%; left:9em; width:15%;" /><br />
-                <input asp-for="CharacterSheet.MaxHP" style="position:relative; top:23%; left:10em; width:25%;" /><br />
-                <input asp-for="CharacterSheet.HitPoints" style="position:relative; top:26%; left:4em;" /><br />
-                <input asp-for="CharacterSheet.TemporaryHP" style="position:relative; top:40%; left:4em;" /><br />
-                <input asp-for="CharacterSheet.HitDie" style="position:relative; top:50%; left:4em; width:20%" />
-                <input asp-for="CharacterSheet.DeathSaveSuccess" style="position:relative; top:50%; left:9em; width:30%;" /><br />
-                <input asp-for="CharacterSheet.HitDieType" style="position:relative; top:65%; left:1em; width:20%" />
-                <input asp-for="CharacterSheet.DeathSaveFailure" style="position:relative; top:65%; left:3em;" />
+                <input asp-for="CharacterSheet.ArmorClass" style="position:relative; top:10%; left:12.5%; width:15%" />
+                <input asp-for="CharacterSheet.Initiative" style="position:relative; top:10%; left:25%; width:15%;" />
+                <input asp-for="CharacterSheet.Speed" style="position:relative; top:10%; left:41%; width:15%;" /><br />
+                <input asp-for="CharacterSheet.MaxHP" style="position:relative; top:23%; left:50%; width:25%;" /><br />
+                <input asp-for="CharacterSheet.HitPoints" style="position:relative; top:26%; left:40%; font-size:150%; width:25%" /><br />
+                <input asp-for="CharacterSheet.TemporaryHP" style="position:relative; top:35%; left:40%; font-size:150%; width:25%;" /><br />
+                <input asp-for="CharacterSheet.HitDie" style="position:relative; top:46%; left:22%; width:20%" />
+                <input asp-for="CharacterSheet.DeathSaveSuccess" style="position:relative; top:46%; left:49%; width:20%;" /><br />
+                <input asp-for="CharacterSheet.HitDieType" style="position:relative; top:47%; left:22%; width:20%" />
+                <input asp-for="CharacterSheet.DeathSaveFailure" style="position:relative; top:47%; left:49%; width:20%;" />
             </div>
             <div id="attacks" class="attacks">
-                <textarea asp-for="CharacterSheet.Attacks"></textarea>
+                <textarea asp-for="CharacterSheet.Attacks" style="position:relative; top:7%; left:5%;height:90%;width:90%;max-height:90%;max-width:90%;"></textarea>
             </div>
             <div id="equipment" class="equipment">
-                <input asp-for="Money.Copper" />
-                <input asp-for="Money.Silver" />
-                <input asp-for="Money.Electrum" />
-                <input asp-for="Money.Gold" />
-                <input asp-for="Money.Platinum" />
-                <textarea asp-for="CharacterSheet.Equipment"></textarea>
+                <input asp-for="Money.Copper" class="money no-Spinner" style="top:8%;" /><br />
+                <input asp-for="Money.Silver" class="money no-Spinner" style="top:13%;" /><br />
+                <input asp-for="Money.Electrum" class="money no-Spinner" style="top:19%;" /><br />
+                <input asp-for="Money.Gold" class="money no-Spinner" style="top:24%;" /><br />
+                <input asp-for="Money.Platinum" class="money no-Spinner" style="top:29%;" /><br />
+                <textarea asp-for="CharacterSheet.Equipment" style="position:relative;left:30%; bottom:35%;height:80%;width:65%;resize:none;"></textarea>
             </div>
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
-            <div id="traits" class="traits">
-                <textarea asp-for="CharacterSheet.PersonalityTraits"></textarea>
-                <textarea asp-for="CharacterSheet.Ideals"></textarea>
-                <textarea asp-for="CharacterSheet.Bonds"></textarea>
-                <textarea asp-for="CharacterSheet.Flaws"></textarea>
+            <div id="pTraits" class="personality-traits">
+                <textarea asp-for="CharacterSheet.PersonalityTraits" class="pTraits" style="top:10%" ></textarea><br />
+                <textarea asp-for="CharacterSheet.Ideals" class="pTraits" style="top:17%"></textarea><br />
+                <textarea asp-for="CharacterSheet.Bonds" class="pTraits" style="top:23%"></textarea><br />
+                <textarea asp-for="CharacterSheet.Flaws" class="pTraits" style="top:29%"></textarea><br />
             </div>
-            <div id="features" class="features"></div>
+            <div id="features" class="features" style="text-align:center;">
+                <label>Features</label><br />
+                <textarea asp-for="CharacterSheet.Features" class="f-t" ></textarea><br />
+                <label>Traits</label><br />
+                <textarea asp-for="CharacterSheet.Traits" class="f-t"></textarea>
+            </div>
         </div>
     </div>
 </div>

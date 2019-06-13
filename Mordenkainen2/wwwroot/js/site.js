@@ -141,7 +141,7 @@ function timer() {
 }
 
 //changes the ability modifier under the stat number.
-$(".container-fluid").on("change", ".statbox", function (e) {
+$(".container-fluid").on("keyup", ".statbox", function (e) {
     var modVal = Math.floor((e.target.value -10) / 2);
     switch ($(this).attr("id")) {
         case "CharacterSheet_Strength":
