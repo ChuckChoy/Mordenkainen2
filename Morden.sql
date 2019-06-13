@@ -100,7 +100,9 @@ PassiveWisdom tinyint,
 ArmorClass tinyint default 10,
 Initiative tinyint default 0,
 Speed tinyint default 30,
+MaxHP int default 15,
 HitPoints int default 6,
+TemporaryHP int default 0,
 HitDie tinyint default 1,
 HitDieType varchar(10),
 DeathSaveSuccess tinyint default 0,
@@ -147,23 +149,41 @@ Go
 Create Table Skills(
 SkillsID int identity(1,1),
 CharacterID int,
+Acrobatics_T bit default 0,
 Acrobatics tinyint Default 0,
+AnimalHandling_T bit default 0,
 AnimalHandling tinyint Default 0,
+Arcana_T bit default 0,
 Arcana tinyint Default 0,
+Athletics_T bit default 0,
 Athletics tinyint Default 0,
+Deception_T bit default 0,
 Deception tinyint Default 0,
+History_T bit Default 0,
 History tinyint Default 0,
+Insight_T bit Default 0,
 Insight tinyint Default 0,
+Intimidation_T bit Default 0,
 Intimidation tinyint Default 0,
+Investigation_T bit Default 0,
 Investigation tinyint Default 0,
+Medicine_T bit Default 0,
 Medicine tinyint Default 0,
+Nature_T bit Default 0,
 Nature tinyint Default 0,
+Perception_T bit Default 0,
 Perception tinyint Default 0,
+Performance_T bit Default 0,
 Performance tinyint Default 0,
+Persuasion_T bit Default 0,
 Persuasion tinyint Default 0,
+Religion_T bit Default 0,
 Religion tinyint Default 0,
+Sleight_T bit Default 0,
 Sleight tinyint Default 0,
+Stealth_T bit Default 0,
 Stealth tinyint Default 0,
+Survival_T bit Default 0,
 Survival tinyint Default 0,
 
 CONSTRAINT PK_Skills PRIMARY KEY CLUSTERED(SkillsID),
@@ -245,6 +265,7 @@ CharacterID int,
 Armor varchar(1000),
 Weapons varchar(1000),
 Tools varchar (1000),
+Languages varchar(1000),
 
 
 CONSTRAINT PK_Prof PRIMARY KEY CLUSTERED(ProfID),
@@ -278,14 +299,14 @@ insert into Alignment
 Values('Chaotic Good','They follow their conscience and try to help out without regard to the rules.')
 
 insert into CharacterSheet
-Values(1,'Crush','Barbarian','None',1,1,'Bob','Gnome',1,2000,18,12,14,9,9,11,0,0,0,14,2,30,14,1,'D12',0,0,'Attack 1; Attack2;',
+Values(1,'Crush','Barbarian','None',1,1,'Bob','Gnome',1,2000,18,12,14,9,9,11,0,0,0,14,2,30,20,14,14,1,'D12',0,0,'Attack 1; Attack2;',
 'Weapon1:1-hand axe;Armor:Leather;Boots:Leather;Backpack;','Personality Traits:','Ideals:;','Bonds:','Flaws:;','Features:;','Traits:;')
 
 Insert into SavingThrows
 Values(1,4,1,1,1,2,1,0,0,0,0,0,0)
 
 Insert into Skills
-Values(1,3,0,0,3,0,0,3,0,0,0,0,4,0,0,0,0,0,5)
+Values(1,1,1,3,0,0,0,0,1,3,0,0,0,0,1,3,0,0,0,0,0,0,0,0,1,4,0,0,0,0,0,0,0,0,0,1,5)
 
 Insert into Money
 Values(1,0,0,0,10,0 )
@@ -294,6 +315,6 @@ Insert into Appearance
 Values(1,20,'3.6',45,'Brown','Sun-kissed','Honey colored','Has many scars')
 
 Insert into Proficiencies
-Values(1,'Light Armor;','Axes;','None' )
+Values(1,'Light Armor;','Axes;','Rope','Draconic' )
 
 /*Should I make Procedures for most frequently used queries?*/
