@@ -125,55 +125,75 @@ body {
     padding-bottom:50px;
 }
 
-.top-one{
-    background-image:url("../images/Top1.png");
-    background-size:100% 100%;
-    height:200px;
+.top-one {
+    background-image: url("../images/Top1.png");
+    background-size: 100% 100%;
+    height: 12rem;
+    max-height: 12rem;
+    max-width: 30rem;
 }
 .top-two {
     background: url("../images/Top2.png");
     background-size: 100% 100%;
-    height:200px;
+    height: 12rem;
+    max-height: 12rem;
+    max-width: 16rem;
 }
 .top-three {
     background: url("../images/Top3.png");
     background-size: 100% 100%;
-    height:200px;
+    height: 12rem;
+    max-height: 12rem;
+    max-width: 18rem;
 }
 .top-four {
     background: url("../images/Top4.png");
     background-size: 100% 100%;
-    height:200px;
+    height: 12rem;
+    max-height: 12rem;
+    max-width: 26rem;
 }
-.strength{
+.strength {
     background: url("../images/Strength.png");
     background-size: 100% 100%;
-    height: 130px;
+    height: 8rem;
+    max-height: 9rem;
+    max-width: 7rem;
 }
 .dexterity {
     background: url("../images/Dexterity.png");
     background-size: 100% 100%;
-    height: 130px;
+    height: 8rem;
+    max-height: 9rem;
+    max-width: 7rem;
 }
 .constitution {
     background: url("../images/Constitution.png");
     background-size: 100% 100%;
-    height: 130px;
+    height: 8rem;
+    max-height:9rem;
+    max-width:7rem;
 }
 .intelligence {
     background: url("../images/Intelligence.png");
     background-size: 100% 100%;
-    height: 130px;
+    height: 8rem;
+    max-height: 9rem;
+    max-width: 7rem;
 }
 .wisdom {
     background: url("../images/Wisdom.png");
     background-size: 100% 100%;
-    height: 130px;
+    height: 8rem;
+    max-height: 9rem;
+    max-width: 7rem;
 }
 .charisma {
     background: url("../images/Charisma.png");
     background-size: 100% 100%;
-    height: 130px;
+    height: 8rem;
+    max-height: 9rem;
+    max-width: 7rem;
 }
 .statbox{
     position:relative;
@@ -186,22 +206,30 @@ body {
 .modlabel {
     position: relative;
     top:55%;
-    right:25%;
+    right:22%;
 }
 .inspiration {
     background: url("../images/Inspiration.png");
     background-size: 100% 100%;
-    height: 130px;
+    height: 8rem;
+    max-height: 9rem;
+    max-width: 14rem;
 }
 .savingThrows {
     background: url("../images/SavingThrows.png");
     background-size: 100% 100%;
     height: 200px;
+    height: 12.5rem;
+    max-height: 12.5rem;
+    max-width: 14rem;
 }
 .skills {
     background: url("../images/Skills.png");
     background-size: 100% 100%;
     height: 470px;
+    height: 29.5rem;
+    max-height: 29.5rem;
+    max-width: 14rem;
 }
 .saves-checkbox{
     position:relative;
@@ -225,11 +253,11 @@ body {
 }
 .skill-checkbox {
     position: relative;
-    left: 1.2em;
+    left: 8.7%;
 }
 .skill-check {
     position: relative;
-    left: 1.9em;
+    left: 12%;
     width: 10%;
     height: 1.4em;
     font-size: small;
@@ -237,43 +265,55 @@ body {
 .passive_wisdom {
     background: url("../images/Passive_Wisdom.png");
     background-size: 100% 100%;
-    height: 330px;
+    height: 21rem;
+    max-height: 21rem;
+    max-width: 21rem;
 }
 .pW-input {
     position: relative;
     top: 9%;
-    left: 10%;
+    left: 7%;
     width: 85%
 }
 .pW-label {
     position: relative;
-    left: 10%;
+    left: 7%;
     top: 12%;
 }
 .armorClass {
     background: url("../images/ArmorClass.png");
     background-size: 100% 100%;
-    height: 450px;
+    height: 28.5rem;
+    max-height: 28.5rem;
+    max-width: 21rem;
 }
 .attacks {
     background: url("../images/Attacks.png");
     background-size: 100% 100%;
-    height: 350px;
+    height: 22rem;
+    max-height: 22rem;
+    max-width: 21rem;
 }
 .equipment {
     background: url("../images/Equipment.png");
     background-size: 100% 100%;
-    height: 330px;
+    height: 20.5rem;
+    max-height: 20.5rem;
+    max-width: 21rem;
 }
-.personality-traits{
+.personality-traits {
     background: url("../images/Traits.png");
     background-size: 100% 100%;
-    height: 450px;
+    height: 28.5rem;
+    max-height: 28.5rem;
+    max-width: 21rem;
 }
 .features {
     background: url("../images/Features.png");
     background-size: 100% 100%;
-    height: 680px;
+    height: 42.5rem;
+    max-height: 42.5rem;
+    max-width: 21rem;
 }
 .money{
     position:relative;
@@ -294,3 +334,4 @@ body {
     height: 45%;
     resize:none;
 }
+

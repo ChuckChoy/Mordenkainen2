@@ -123,8 +123,16 @@ namespace Mordenkainen2.Controllers
             int userID = 1;//for testing
             //get CharacterSheetViewModel with a query
             CharacterSheetViewModel character = EFQueries.GetCharacter(userID, (int)charID);
-            //return object and the OK http code
-            return Ok(character);
+            //return object and the OK http code. Had to serialize object because jquery .post gives
+            // an error if return object isn't properly formated json. Also needed to ad teh ignore reference
+            //loop setting because of error.s
+            return Ok(JsonConvert.SerializeObject(character, Formatting.None,
+                        new JsonSerializerSettings()
+                        {
+                            ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                            //PreserveReferencesHandling = PreserveReferencesHandling.Objects
+                        })
+                        );
         }
 
         [HttpPost]

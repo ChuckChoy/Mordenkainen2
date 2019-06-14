@@ -37,6 +37,7 @@ namespace Mordenkainen2
                 options.IdleTimeout = TimeSpan.FromMinutes(30);
             });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

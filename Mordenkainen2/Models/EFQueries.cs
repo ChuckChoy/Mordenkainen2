@@ -57,6 +57,9 @@ namespace Mordenkainen2.Models
             //couldn't think of a better way than to make multiple calls at the moment.
             using (var context = new Context())
             {
+                //need to preload tables the are being referenced, but aren't related through a primary key.
+                context.Alignment.Load();
+                context.Background.Load();
                 //make one query that hopefully gets all the objects I need.
                 CharacterSheet sheet = context.CharacterSheet
                     .Where(d => d.UserID == userID && d.CharacterID == charID)

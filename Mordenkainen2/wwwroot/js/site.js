@@ -80,6 +80,55 @@ $(function () {
         }
     });
 });
+//get the character from the database.
+$("#characterSelect").change(function (e) {
+    //controller action
+    var actionUrl = "GetSelectedCharacter";
+    //get value of dropdown box    
+    var data = e.target.value;
+    // post the character selection to server
+    $.ajax({
+        type: "POST",
+        url: actionUrl,
+        data: { charID: data },
+        success: function (data) {
+            var res = JSON.parse(data);
+            $("#CharacterSheet_CharacterName").val(res["CharacterSheet"]["CharacterName"]);
+            $("#CharacterSheet_Class").val(res["CharacterSheet"]["Class"]);
+            $("#CharacterSheet_CharLevel").val(res["CharacterSheet"]["CharLevel"]);
+            $("#CharacterSheet_Race").val(res["CharacterSheet"]["Race"]);
+            $("#CharacterSheet_PlayerName").val(res["CharacterSheet"]["PlayerName"]);
+            $("#CharacterSheet_Experience").val(res["CharacterSheet"]["Experience"]);
+            $("#CharacterSheet_Strength").val(res["CharacterSheet"]["Strength"]);
+            $("#CharacterSheet_Dexterity").val(res["CharacterSheet"]["Dexterity"]);
+            $("#CharacterSheet_Constitution").val(res["CharacterSheet"]["Constitution"]);
+            $("#CharacterSheet_Intelligence").val(res["CharacterSheet"]["Intelligence"]);
+            $("#CharacterSheet_Wisdom").val(res["CharacterSheet"]["Wisdom"]);
+            $("#CharacterSheet_Charisma").val(res["CharacterSheet"]["Charisma"]);
+            $("#CharacterSheet_Inspiration").val(res["CharacterSheet"]["Inspiration"]);
+            $("#CharacterSheet_ProficiencyBonus").val(res["CharacterSheet"]["ProficiencyBonus"]);
+            $("#SavingThrows_StrSaveProf").val(res["SavingThrows"]["StrSaveProf"]);
+            $("#SavingThrows_StrSave").val(res["SavingThrows"]["StrSave"]);
+            $("#SavingThrows_DexSaveProf").val(res["SavingThrows"]["DexSaveProf"]);
+            $("#SavingThrows_DexSave").val(res["SavingThrows"]["DexSave"]);
+            $("#SavingThrows_ConSaveProf").val(res["SavingThrows"]["ConSaveProf"]);
+            $("#SavingThrows_ConSave").val(res["SavingThrows"]["ConSave"]);
+            $("#SavingThrows_IntSaveProf").val(res["SavingThrows"]["IntSaveProf"]);
+            $("#SavingThrows_IntSave").val(res["SavingThrows"]["IntSave"]);
+            $("#SavingThrows_WisSaveProf").val(res["SavingThrows"]["WisSaveProf"]);
+            $("#SavingThrows_WisSave").val(res["SavingThrows"]["WisSave"]);
+            $("#SavingThrows_CharSaveProf").val(res["SavingThrows"]["ChaSaveProf"]);
+            $("#SavingThrows_ChaSave").val(res["SavingThrows"]["ChaSave"]);
+            $("#Skills_Acrobatics_T").val(res["SavingThrows"]["StrSaveProf"]);
+
+        }
+        //error: function (xhr, status, error) {
+        //    alert(xhr.responseText);
+        //    alert(status.responseText);
+        //    alert(error.responseText);
+        //}
+    });
+});
 
 var savetimer = 0;
 var keyPressBool = false;

@@ -1,7 +1,6 @@
 ﻿@model CharacterSheetViewModel
 @{
     ViewData["Title"] = "CharacterSheet";
-    CharacterSheetViewModel character = new CharacterSheetViewModel();
 }
 
 
@@ -15,7 +14,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12 col-md-6 col-lg-5 col-xl-5 top-one">            
-            <input asp-for="CharacterSheet.CharacterName" style="position:relative; left:7em; top:48%; height:2em;"/>
+            <input asp-for="CharacterSheet.CharacterName" style="position:relative; left:15%; top:45%; width:80%; font-size:1.5rem;"/>
         </div>
         <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3 top-two">
             <input asp-for="CharacterSheet.Class" style="position:relative; left:1em; top:32%; width:50%" />
@@ -32,9 +31,9 @@
         </div>
     </div>
     <div class="row" style="padding-top:0px; margin-top:0px;">
-        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
             <div class="row">
-                <div id="stats" class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                <div id="stats" class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
                     <div class="strength">
                         <input asp-for="CharacterSheet.Strength" class="statbox no-Spinner" />
                         <label id="strMod" class="modlabel"></label>
@@ -82,7 +81,7 @@
                     <div class="skills">
                         <input asp-for="Skills.Acrobatics_T" type="checkbox" class="skill-checkbox" style="top:4.5%;" />
                         <input asp-for="Skills.Acrobatics" class="no-Spinner skill-check" style="top:3.5%" /><br />
-                        <input asp-for="Skills.AnimalHandling_T" type="checkbox" class="skill-checkbox" style="top:4%;" />
+                        <input asp-for="Skills.AnimalHandling_T" type="checkbox" class="skill-checkbox" style="top:4.1%;" />
                         <input asp-for="Skills.AnimalHandling" class="no-Spinner skill-check" style="top:3%" /><br />
                         <input asp-for="Skills.Arcana_T" type="checkbox" class="skill-checkbox" style="top:4%;" />
                         <input asp-for="Skills.Arcana" class="no-Spinner skill-check" style="top:3%" /><br />
@@ -92,7 +91,7 @@
                         <input asp-for="Skills.Deception" class="no-Spinner skill-check" style="top:2.5%" /><br />
                         <input asp-for="Skills.History_T" type="checkbox" class="skill-checkbox" style="top:3.5%;" />
                         <input asp-for="Skills.History" class="no-Spinner skill-check" style="top:2.5%" /><br />
-                        <input asp-for="Skills.Insight_T" type="checkbox" class="skill-checkbox" style="top:3%;" />
+                        <input asp-for="Skills.Insight_T" type="checkbox" class="skill-checkbox" style="top:3.1%;" />
                         <input asp-for="Skills.Insight" class="no-Spinner skill-check" style="top:2.2%" /><br />
                         <input asp-for="Skills.Intimidation_T" type="checkbox" class="skill-checkbox" style="top:3%;" />
                         <input asp-for="Skills.Intimidation" class="no-Spinner skill-check" style="top:2.2%" /><br />
@@ -110,18 +109,18 @@
                         <input asp-for="Skills.Persuasion" class="no-Spinner skill-check" style="top:0.8%" /><br />
                         <input asp-for="Skills.Religion_T" type="checkbox" class="skill-checkbox" style="top:1.5%;" />
                         <input asp-for="Skills.Religion" class="no-Spinner skill-check" style="top:0.6%" /><br />
-                        <input asp-for="Skills.Sleight_T" type="checkbox" class="skill-checkbox" style="top:1.2%;" />
+                        <input asp-for="Skills.Sleight_T" type="checkbox" class="skill-checkbox" style="top:1.4%;" />
                         <input asp-for="Skills.Sleight" class="no-Spinner skill-check" style="top:0.4%" /><br />
-                        <input asp-for="Skills.Stealth_T" type="checkbox" class="skill-checkbox" style="top:1%;" />
+                        <input asp-for="Skills.Stealth_T" type="checkbox" class="skill-checkbox" style="top:1.2%;" />
                         <input asp-for="Skills.Stealth" class="no-Spinner skill-check" style="top:0.2%" /><br />
-                        <input asp-for="Skills.Survival_T" type="checkbox" class="skill-checkbox" style="top:0.6%;" />
+                        <input asp-for="Skills.Survival_T" type="checkbox" class="skill-checkbox" style="top:1%;" />
                         <input asp-for="Skills.Survival" class="no-Spinner skill-check" style="top:0.1%;" /><br />
 
                     </div>
                 </div>
             </div>
             <div id="passiveWisdom" class="passive_wisdom">
-                <input asp-for="CharacterSheet.PassiveWisdom" style="position:relative; top:3.9%; width:85%; left:3.5%;" /><br />
+                <input asp-for="CharacterSheet.PassiveWisdom" class="no-Spinner"style="position:relative; top:3.9%; width:10%; left:4%;" /><br />
                 <label class="pW-label" >Armor</label><br />
                 <input asp-for="Proficiencies.Armor" class="pW-input" /><br />
                 <label class="pW-label">Weapons</label><br />
@@ -132,7 +131,7 @@
                 <input asp-for="Proficiencies.Languages" class="pW-input" /><br />
             </div>
         </div>
-        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
             <div id="armorClass" class="armorClass">
                 <input asp-for="CharacterSheet.ArmorClass" style="position:relative; top:10%; left:12.5%; width:15%" />
                 <input asp-for="CharacterSheet.Initiative" style="position:relative; top:10%; left:25%; width:15%;" />
@@ -157,28 +156,23 @@
                 <textarea asp-for="CharacterSheet.Equipment" style="position:relative;left:30%; bottom:35%;height:80%;width:65%;resize:none;"></textarea>
             </div>
         </div>
-        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
-            <div id="pTraits" class="personality-traits">
-                <textarea asp-for="CharacterSheet.PersonalityTraits" class="pTraits" style="top:10%" ></textarea><br />
+        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+            <div class="row no-gutters">
+            <div id="pTraits" class="col-sm-12 col-md-6 col-lg-12 col-xl-12 personality-traits">
+                <textarea asp-for="CharacterSheet.PersonalityTraits" class="pTraits" style="top:10%;" ></textarea><br />
                 <textarea asp-for="CharacterSheet.Ideals" class="pTraits" style="top:17%"></textarea><br />
                 <textarea asp-for="CharacterSheet.Bonds" class="pTraits" style="top:23%"></textarea><br />
                 <textarea asp-for="CharacterSheet.Flaws" class="pTraits" style="top:29%"></textarea><br />
             </div>
-            <div id="features" class="features" style="text-align:center;">
+            <div id="features" class="col-sm-12 col-md-6 col-lg-12 col-xl-12 features" style="text-align:center;">
                 <label>Features</label><br />
                 <textarea asp-for="CharacterSheet.Features" class="f-t" ></textarea><br />
                 <label>Traits</label><br />
                 <textarea asp-for="CharacterSheet.Traits" class="f-t"></textarea>
             </div>
+            </div>
         </div>
     </div>
 </div>
 <script>
-$("#characterSelect").change(function (e) {
-    var actionUrl = "GetSelectedCharacter";
-    var data = e.target.value;
-    $.post(actionUrl, { charID: data } ,function (res) {
-        @character = res;
-    });
-});
 </script>
