@@ -7,9 +7,13 @@
 <!--Note to self. Use inputs, all with the same id, then add an onchange event listener in javascript,
     so that when any of the inputs change I can send it off in an https request. Then maybe put some sort of
     timer before the save triggers again?-->
-<div class="">
-    <span>Character selection</span>
-    <select id="characterSelect" width="50px"></select>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <span>Character selection</span>
+            <select id="characterSelect" width="50px"></select>
+        </div>
+    </div>
 </div>
 <div class="container-fluid">
     <div class="row">
@@ -22,8 +26,8 @@
             <input asp-for="CharacterSheet.Race" style="position:relative; left:1em; top:43%; " />
         </div>
         <div class="col-sm-12 col-md-4 col-lg-2 col-xl-2 top-three text-left">
-            <select asp-for="CharacterSheet.Background" style="position:relative; top:34%;"></select>
-            <select asp-for="CharacterSheet.Alignment" style="position:relative; right:2em; top:60%; "></select>     
+            <input asp-for="CharacterSheet.Background" style="position:relative; top:34%; width:75%;" /><br/>
+            <input asp-for="CharacterSheet.Alignment" style="position:relative;  top:43%; width:75%;" />    
         </div>
         <div class="col-sm-12 col-md-4 col-lg-2 col-xl-2 top-four text-left">
             <input asp-for="CharacterSheet.PlayerName" style="position:relative; right:1em; top:32%; width:50%;" />
@@ -35,7 +39,7 @@
             <div class="row">
                 <div id="stats" class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
                     <div class="strength">
-                        <input asp-for="CharacterSheet.Strength" class="statbox no-Spinner" />
+                        <input asp-for="CharacterSheet.Strength" class="statbox no-Spinner sheetobj" />
                         <label id="strMod" class="modlabel"></label>
                     </div>
                     <div class="dexterity">
@@ -158,18 +162,18 @@
         </div>
         <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
             <div class="row no-gutters">
-            <div id="pTraits" class="col-sm-12 col-md-6 col-lg-12 col-xl-12 personality-traits">
-                <textarea asp-for="CharacterSheet.PersonalityTraits" class="pTraits" style="top:10%;" ></textarea><br />
-                <textarea asp-for="CharacterSheet.Ideals" class="pTraits" style="top:17%"></textarea><br />
-                <textarea asp-for="CharacterSheet.Bonds" class="pTraits" style="top:23%"></textarea><br />
-                <textarea asp-for="CharacterSheet.Flaws" class="pTraits" style="top:29%"></textarea><br />
-            </div>
-            <div id="features" class="col-sm-12 col-md-6 col-lg-12 col-xl-12 features" style="text-align:center;">
-                <label>Features</label><br />
-                <textarea asp-for="CharacterSheet.Features" class="f-t" ></textarea><br />
-                <label>Traits</label><br />
-                <textarea asp-for="CharacterSheet.Traits" class="f-t"></textarea>
-            </div>
+                <div id="pTraits" class="col-sm-12 col-md-6 col-lg-12 col-xl-12 personality-traits">
+                    <textarea asp-for="CharacterSheet.PersonalityTraits" class="pTraits" style="top:10%;" ></textarea><br />
+                    <textarea asp-for="CharacterSheet.Ideals" class="pTraits" style="top:17%"></textarea><br />
+                    <textarea asp-for="CharacterSheet.Bonds" class="pTraits" style="top:23%"></textarea><br />
+                    <textarea asp-for="CharacterSheet.Flaws" class="pTraits" style="top:29%"></textarea><br />
+                </div>
+                <div id="features" class="col-sm-12 col-md-6 col-lg-12 col-xl-12 features" style="text-align:center;">
+                    <label>Features</label><br />
+                    <textarea asp-for="CharacterSheet.Features" class="f-t" ></textarea><br />
+                    <label>Traits</label><br />
+                    <textarea asp-for="CharacterSheet.Traits" class="f-t"></textarea>
+                </div>
             </div>
         </div>
     </div>

@@ -97,30 +97,103 @@ $("#characterSelect").change(function (e) {
             $("#CharacterSheet_Class").val(res["CharacterSheet"]["Class"]);
             $("#CharacterSheet_CharLevel").val(res["CharacterSheet"]["CharLevel"]);
             $("#CharacterSheet_Race").val(res["CharacterSheet"]["Race"]);
+            $("#CharacterSheet_Background").val(res["CharacterSheet"]["Background"]["BackgroundName"]);
+            $("#CharacterSheet_Alignment").val(res["CharacterSheet"]["Alignment"]["AlignmentType"]);
             $("#CharacterSheet_PlayerName").val(res["CharacterSheet"]["PlayerName"]);
             $("#CharacterSheet_Experience").val(res["CharacterSheet"]["Experience"]);
-            $("#CharacterSheet_Strength").val(res["CharacterSheet"]["Strength"]);
-            $("#CharacterSheet_Dexterity").val(res["CharacterSheet"]["Dexterity"]);
-            $("#CharacterSheet_Constitution").val(res["CharacterSheet"]["Constitution"]);
-            $("#CharacterSheet_Intelligence").val(res["CharacterSheet"]["Intelligence"]);
-            $("#CharacterSheet_Wisdom").val(res["CharacterSheet"]["Wisdom"]);
-            $("#CharacterSheet_Charisma").val(res["CharacterSheet"]["Charisma"]);
+
+            $("#CharacterSheet_Strength").val(res["CharacterSheet"]["Strength"]).change();
+            $("#CharacterSheet_Dexterity").val(res["CharacterSheet"]["Dexterity"]).change();
+            $("#CharacterSheet_Constitution").val(res["CharacterSheet"]["Constitution"]).change();
+            $("#CharacterSheet_Intelligence").val(res["CharacterSheet"]["Intelligence"]).change();
+            $("#CharacterSheet_Wisdom").val(res["CharacterSheet"]["Wisdom"]).change();
+            $("#CharacterSheet_Charisma").val(res["CharacterSheet"]["Charisma"]).change();
             $("#CharacterSheet_Inspiration").val(res["CharacterSheet"]["Inspiration"]);
             $("#CharacterSheet_ProficiencyBonus").val(res["CharacterSheet"]["ProficiencyBonus"]);
-            $("#SavingThrows_StrSaveProf").val(res["SavingThrows"]["StrSaveProf"]);
-            $("#SavingThrows_StrSave").val(res["SavingThrows"]["StrSave"]);
-            $("#SavingThrows_DexSaveProf").val(res["SavingThrows"]["DexSaveProf"]);
-            $("#SavingThrows_DexSave").val(res["SavingThrows"]["DexSave"]);
-            $("#SavingThrows_ConSaveProf").val(res["SavingThrows"]["ConSaveProf"]);
-            $("#SavingThrows_ConSave").val(res["SavingThrows"]["ConSave"]);
-            $("#SavingThrows_IntSaveProf").val(res["SavingThrows"]["IntSaveProf"]);
-            $("#SavingThrows_IntSave").val(res["SavingThrows"]["IntSave"]);
-            $("#SavingThrows_WisSaveProf").val(res["SavingThrows"]["WisSaveProf"]);
-            $("#SavingThrows_WisSave").val(res["SavingThrows"]["WisSave"]);
-            $("#SavingThrows_CharSaveProf").val(res["SavingThrows"]["ChaSaveProf"]);
-            $("#SavingThrows_ChaSave").val(res["SavingThrows"]["ChaSave"]);
-            $("#Skills_Acrobatics_T").val(res["SavingThrows"]["StrSaveProf"]);
 
+            $("#SavingThrows_StrSaveProf").attr("checked",res["SavingThrows"]["StrSaveProf"]);
+            $("#SavingThrows_StrSave").val(res["SavingThrows"]["StrSave"]);
+            $("#SavingThrows_DexSaveProf").attr("checked",res["SavingThrows"]["DexSaveProf"]);
+            $("#SavingThrows_DexSave").val(res["SavingThrows"]["DexSave"]);
+            $("#SavingThrows_ConSaveProf").attr("checked",res["SavingThrows"]["ConSaveProf"]);
+            $("#SavingThrows_ConSave").val(res["SavingThrows"]["ConSave"]);
+            $("#SavingThrows_IntSaveProf").attr("checked",res["SavingThrows"]["IntSaveProf"]);
+            $("#SavingThrows_IntSave").val(res["SavingThrows"]["IntSave"]);
+            $("#SavingThrows_WisSaveProf").attr("checked",res["SavingThrows"]["WisSaveProf"]);
+            $("#SavingThrows_WisSave").val(res["SavingThrows"]["WisSave"]);
+            $("#SavingThrows_CharSaveProf").attr("checked",res["SavingThrows"]["ChaSaveProf"]);
+            $("#SavingThrows_ChaSave").val(res["SavingThrows"]["ChaSave"]);
+
+            $("#Skills_Acrobatics_T").attr("checked",res["Skills"]["Acrobatics_T"]);
+            $("#Skills_Acrobatics").val(res["Skills"]["Acrobatics"]);
+            $("#Skills_AnimalHandling_T").attr("checked", res["Skills"]["AnimalHandling_T"]);
+            $("#Skills_AnimalHandling").val(res["Skills"]["AnimalHandling"]);
+            $("#Skills_Arcana_T").attr("checked", res["Skills"]["Arcana_T"]);
+            $("#Skills_Arcana").val(res["Skills"]["Arcana"]);
+            $("#Skills_Athletics_T").attr("checked", res["Skills"]["Athletics_T"]);
+            $("#Skills_Athletics").val(res["Skills"]["Athletics"]);
+            $("#Skills_Deception_T").attr("checked", res["Skills"]["Deception_T"]);
+            $("#Skills_Deception").val(res["Skills"]["Deception"]);
+            $("#Skills_History_T").attr("checked", res["Skills"]["History_T"]);
+            $("#Skills_History").val(res["Skills"]["History"]);
+            $("#Skills_Insight_T").attr("checked", res["Skills"]["Insight_T"]);
+            $("#Skills_Insight").val(res["Skills"]["Insight"]);
+            $("#Skills_Intimidation_T").attr("checked", res["Skills"]["Intimidation_T"]);
+            $("#Skills_Intimidation").val(res["Skills"]["Intimidation"]);
+            $("#Skills_Investigation_T").attr("checked", res["Skills"]["Investigation_T"]);
+            $("#Skills_Investigation").val(res["Skills"]["Investigation"]);
+            $("#Skills_Medicine_T").attr("checked", res["Skills"]["Medicine_T"]);
+            $("#Skills_Medicine").val(res["Skills"]["Medicine"]);
+            $("#Skills_Nature_T").attr("checked", res["Skills"]["Nature_T"]);
+            $("#Skills_Nature").val(res["Skills"]["Nature"]);
+            $("#Skills_Perception_T").attr("checked", res["Skills"]["Perception_T"]);
+            $("#Skills_Perception").val(res["Skills"]["Perception"]);
+            $("#Skills_Performance_T").attr("checked", res["Skills"]["Performance_T"]);
+            $("#Skills_Performance").val(res["Skills"]["Performance"]);
+            $("#Skills_Persuasion_T").attr("checked", res["Skills"]["Persuasion_T"]);
+            $("#Skills_Persuasion").val(res["Skills"]["Persuasion"]);
+            $("#Skills_Religion_T").attr("checked", res["Skills"]["Religion_T"]);
+            $("#Skills_Religion").val(res["Skills"]["Religion"]);
+            $("#Skills_Sleight_T").attr("checked", res["Skills"]["Sleight_T"]);
+            $("#Skills_Sleight").val(res["Skills"]["Sleight"]);
+            $("#Skills_Stealth_T").attr("checked", res["Skills"]["Stealth_T"]);
+            $("#Skills_Stealth").val(res["Skills"]["Stealth"]);
+            $("#Skills_Survival_T").attr("checked", res["Skills"]["Survival_T"]);
+            $("#Skills_Survival").val(res["Skills"]["Survival"]);
+
+            $("#CharacterSheet_PassiveWisdom").val(res["CharacterSheet"]["PassiveWisdom"]);
+            $("#Proficiencies_Armor").val(res["Proficiencies"]["Armor"]);
+            $("#Proficiencies_Weapons").val(res["Proficiencies"]["Weapons"]);
+            $("#Proficiencies_Tools").val(res["Proficiencies"]["Tools"]);
+            $("#Proficiencies_Languages").val(res["Proficiencies"]["Languages"]);
+
+            $("#CharacterSheet_ArmorClass").val(res["CharacterSheet"]["ArmorClass"]);
+            $("#CharacterSheet_Initiative").val(res["CharacterSheet"]["Initiative"]);
+            $("#CharacterSheet_Speed").val(res["CharacterSheet"]["Speed"]);
+            $("#CharacterSheet_MaxHP").val(res["CharacterSheet"]["MaxHP"]);
+            $("#CharacterSheet_HitPoints").val(res["CharacterSheet"]["HitPoints"]);
+            $("#CharacterSheet_TemporaryHP").val(res["CharacterSheet"]["TemporaryHP"]);
+            $("#CharacterSheet_HitDie").val(res["CharacterSheet"]["HitDie"]);
+            $("#CharacterSheet_HitDieType").val(res["CharacterSheet"]["HitDieType"]);
+            $("#CharacterSheet_DeathSaveSuccess").val(res["CharacterSheet"]["DeathSaveSuccess"]);
+            $("#CharacterSheet_DeathSaveFailure").val(res["CharacterSheet"]["DeathSaveFailure"]);
+
+            $("#CharacterSheet_Attacks").val(res["CharacterSheet"]["Attacks"]);
+
+            $("#Money_Copper").val(res["Money"]["Copper"]);
+            $("#Money_Silver").val(res["Money"]["Silver"]);
+            $("#Money_Electrum").val(res["Money"]["Electrum"]);
+            $("#Money_Gold").val(res["Money"]["Gold"]);
+            $("#Money_Platinum").val(res["Money"]["Platinum"]);
+            $("#CharacterSheet_Equipment").val(res["CharacterSheet"]["Equipment"]);
+
+            $("#CharacterSheet_PersonalityTraits").val(res["CharacterSheet"]["PersonalityTraits"]);
+            $("#CharacterSheet_Ideals").val(res["CharacterSheet"]["Ideals"]);
+            $("#CharacterSheet_Bonds").val(res["CharacterSheet"]["Bonds"]);
+            $("#CharacterSheet_Flaws").val(res["CharacterSheet"]["Flaws"]);
+
+            $("#CharacterSheet_Features").val(res["CharacterSheet"]["Features"]);
+            $("#CharacterSheet_Traits").val(res["CharacterSheet"]["Traits"]);
         }
         //error: function (xhr, status, error) {
         //    alert(xhr.responseText);
@@ -190,7 +263,7 @@ function timer() {
 }
 
 //changes the ability modifier under the stat number.
-$(".container-fluid").on("keyup", ".statbox", function (e) {
+$(".container-fluid").on("change", ".statbox", function (e) {
     var modVal = Math.floor((e.target.value -10) / 2);
     switch ($(this).attr("id")) {
         case "CharacterSheet_Strength":
