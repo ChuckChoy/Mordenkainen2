@@ -118,6 +118,26 @@ namespace Mordenkainen2.Models
             }
         }
 
+        //retreives list of alignment options
+        public static List<Alignment> GetAlignments()
+        {
+            using (var context = new Context())
+            {
+                var selection = context.Alignment.ToList();
+                return selection;
+            }
+        }
+
+        //retreives list of background options
+        public static List<Background> GetBackgrounds()
+        {
+            using (var context = new Context())
+            {
+                var selection = context.Background.ToList();
+                return selection;
+            }
+        }
+
         //insert new character
         public static bool CreateCharacter(CharacterSheetViewModel sheet)
         {

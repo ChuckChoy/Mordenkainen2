@@ -4,10 +4,11 @@
 }
 <h2>Character Creation</h2>
 <!--Note: need some way to page through multiple blocks of inputs. Ideas: partial views, -->
+<button id="saveCharacter" class="btn btn-danger">Save Character</button>
 <div class="container">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
        
-        <form id="reg" asp-controller="Home" asp-action="CreateCharacter" method="post">
+        <form id="sheetform" asp-controller="Home" asp-action="CreateCharacter" method="post">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="row">
@@ -18,14 +19,14 @@
                             <input asp-for="CharacterSheet.CharacterName" class="form-control" placeholder="ex. Thoradin Fireforge" />
                             <label asp-for="CharacterSheet.Class" class="control-label formText">Character Class</label>
                             <input asp-for="CharacterSheet.Class" class="form-control" placeholder="ex. Paladin" />
-                            <label asp-for="CharacterSheet.CharLevel" class="control-label formText">Character Name</label>
+                            <label asp-for="CharacterSheet.CharLevel" class="control-label formText">Character Level</label>
                             <input asp-for="CharacterSheet.CharLevel" class="form-control" placeholder="ex. 1" />
                             <label asp-for="CharacterSheet.BackgroundID" class="control-label formText">Background</label>
-                            <select asp-for="CharacterSheet.Background" class="form-control"></select>
+                            <select asp-for="CharacterSheet.BackgroundID" class="form-control"></select>
                             <label asp-for="CharacterSheet.Race" class="control-label formText">Race</label>
                             <input asp-for="CharacterSheet.Race" class="form-control" placeholder="ex. Dwarf" />
                             <label asp-for="CharacterSheet.AlignmentID" class="control-label formText">Alignment</label>
-                            <select asp-for="CharacterSheet.Alignment" class="form-control"></select>
+                            <select asp-for="CharacterSheet.AlignmentID" class="form-control"></select>
                             <label asp-for="CharacterSheet.Experience" class="control-label formText">Experience</label>
                             <input asp-for="CharacterSheet.Experience" class="form-control" placeholder="ex. 1000" />
                         </div>
@@ -253,19 +254,62 @@
                             <label asp-for="CharacterSheet.ArmorClass" class="control-label formText">Armor Class</label>
                             <input asp-for="CharacterSheet.ArmorClass" class="form-control" placeholder="ex. 10" />
                             <label asp-for="CharacterSheet.Initiative" class="control-label formText">Initiative</label>
-                            <input asp-for="CharacterSheet.Initiative" class="form-control" placeholder="ex. 10" />
+                            <input asp-for="CharacterSheet.Initiative" class="form-control" placeholder="ex. 5" />
                             <label asp-for="CharacterSheet.Speed" class="control-label formText">Speed</label>
-                            <input asp-for="CharacterSheet.Speed" class="form-control" placeholder="ex. 10" />
-                            <label asp-for="CharacterSheet.HitPoints" class="control-label formText">Inspiration</label>
+                            <input asp-for="CharacterSheet.Speed" class="form-control" placeholder="ex. 20ft" />
+                            <label asp-for="CharacterSheet.HitPoints" class="control-label formText">Hit points</label>
                             <input asp-for="CharacterSheet.HitPoints" class="form-control" placeholder="ex. 10" />
-                            <label asp-for="CharacterSheet.Inspiration" class="control-label formText">Inspiration</label>
-                            <input asp-for="CharacterSheet.Inspiration" class="form-control" placeholder="ex. 10" />
-                            <label asp-for="CharacterSheet.Inspiration" class="control-label formText">Inspiration</label>
-                            <input asp-for="CharacterSheet.Inspiration" class="form-control" placeholder="ex. 10" />
-                            <label asp-for="CharacterSheet.Inspiration" class="control-label formText">Inspiration</label>
-                            <input asp-for="CharacterSheet.Inspiration" class="form-control" placeholder="ex. 10" />
-                            <label asp-for="CharacterSheet.Inspiration" class="control-label formText">Inspiration</label>
-                            <input asp-for="CharacterSheet.Inspiration" class="form-control" placeholder="ex. 10" />
+                            <label asp-for="CharacterSheet.HitDie" class="control-label formText">Amount of hit die</label>
+                            <input asp-for="CharacterSheet.HitDie" class="form-control" placeholder="dice used for hit points" />
+                            <label asp-for="CharacterSheet.HitDieType" class="control-label formText">Type of Hit die</label>
+                            <input asp-for="CharacterSheet.HitDieType" class="form-control" placeholder="1d8" />
+                            <label asp-for="CharacterSheet.Attacks" class="control-label formText">Attacks</label>
+                            <textarea asp-for="CharacterSheet.Attacks" class="form-control" placeholder=""></textarea>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-12 text-center"><h4>Money &amp; Equipment</h4></div>
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <label asp-for="Money.Copper" class="control-label formText">Copper</label>
+                            <input asp-for="Money.Copper" class="form-control" placeholder="ex. 10" />
+                            <label asp-for="Money.Silver" class="control-label formText">Silver</label>
+                            <input asp-for="Money.Silver" class="form-control" placeholder="ex. 10" />
+                            <label asp-for="Money.Electrum" class="control-label formText">Electrum</label>
+                            <input asp-for="Money.Electrum" class="form-control" placeholder="ex. 10" />
+                            <label asp-for="Money.Gold" class="control-label formText">gold</label>
+                            <input asp-for="Money.Gold" class="form-control" placeholder="ex. 10" />
+                            <label asp-for="Money.Platinum" class="control-label formText">Platinum</label>
+                            <input asp-for="Money.Platinum" class="form-control" placeholder="ex. 10" />
+                            <label asp-for="CharacterSheet.Equipment" class="control-label form-text"></label>
+                            <textarea asp-for="CharacterSheet.Equipment" class="form-control" placeholder="Equipment goes here"></textarea>
+                            <button>Add</button>
+                            <button>Remove</button>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-12 text-center"><h4>Traits &amp; Features</h4></div>
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <label asp-for="CharacterSheet.PersonalityTraits" class="control-label formText">Personality Traits</label>
+                            <textarea asp-for="CharacterSheet.PersonalityTraits" class="form-control" placeholder="Personality traits go here"></textarea>
+                            <label asp-for="CharacterSheet.Ideals" class="control-label formText">Ideals</label>
+                            <textarea asp-for="CharacterSheet.Ideals" class="form-control" placeholder="Ideals go here"></textarea>
+                            <label asp-for="CharacterSheet.Bonds" class="control-label formText">Bonds</label>
+                            <textarea asp-for="CharacterSheet.Bonds" class="form-control" placeholder="Bonds go here"></textarea>
+                            <label asp-for="CharacterSheet.Flaws" class="control-label formText">Flaws</label>
+                            <textarea asp-for="CharacterSheet.Flaws" class="form-control" placeholder="Flaws go here"></textarea>
+                            <label asp-for="CharacterSheet.Traits" class="control-label formText">Traits</label>
+                            <textarea asp-for="CharacterSheet.Traits" class="form-control" placeholder="Traits go here"></textarea>
+                            <label asp-for="CharacterSheet.Features" class="control-label formText">Features</label>
+                            <textarea asp-for="CharacterSheet.Features" class="form-control" placeholder="Features go here"></textarea>
+                            <button type="submit" class="btn btn-danger">Save Character</button>
                         </div>
                         <div class="col-2"></div>
                     </div>
@@ -282,13 +326,15 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-        </ol>
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+            </ol>
     </div>
 </div>

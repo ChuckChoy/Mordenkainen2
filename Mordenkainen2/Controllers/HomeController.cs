@@ -110,6 +110,18 @@ namespace Mordenkainen2.Controllers
             return Json(characters);
         }
 
+        [HttpGet]
+        public JsonResult GetAlignmentSelection()
+        {
+            return Json(EFQueries.GetAlignments());
+        }
+
+        [HttpGet]
+        public JsonResult GetBackgroundSelection()
+        {
+            return Json(EFQueries.GetAlignments());
+        }
+
         [HttpPost]
         public IActionResult GetSelectedCharacter(int? charID)
         {

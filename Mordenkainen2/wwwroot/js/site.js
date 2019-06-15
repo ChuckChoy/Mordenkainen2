@@ -32,7 +32,6 @@ $(function () {
 $(function () {
     $("#sheetform").submit(function (e) {
         e.preventDefault();  //prevent normal form submission
-
         var actionUrl = $(this).attr("CreateCharacter");  // get the form action value
         $.post(actionUrl, $(this).serialize(), function (res) {
             //res is the response coming from our ajax call. Use this to update DOM
@@ -41,20 +40,21 @@ $(function () {
     });
 });
 
-//Fires when you select a character. Moved to View
-//$("#characterSelect").change(function (e) {
-//    //set the controller action
-//    var actionUrl = "GetSelectedCharacter";
-//    //get value of of selected option
-//    //var data = e.val();
-//    var data = e.target.value;
-//    //post response that will send the value of the selected option
-//    $.post(actionUrl, data ,function (res) {
-//        //res is the response coming from our ajax call. Use this to update DOM
-//        //update all character sheet values.
-//        return res;
-//    });
-//});
+//save character with the save button at top of page.
+$("#saveCharacter").on("click",function () {   
+    var actionUrl = $(this).attr("CreateCharacter");  // get the form action value
+    //get current contents of the form
+    $("#sheetform").submit(function () {
+        //prevent actual submit
+        e.preventDefault();
+        //send serialized object via ajax post to server
+        $.post(actionUrl, $(this).serialize(), function (res) {
+            //res is the response coming from our ajax call. Use this to update DOM
+            $("#viewB").html(res);
+        });
+    });
+   
+});
 
 
 //on load retreive character selection
@@ -80,6 +80,55 @@ $(function () {
         }
     });
 });
+
+//get alignment selection for character creation
+$(function () {
+    var actionUrl = "GetAlignmentSelection";
+    $.get(actionUrl, function (res) {
+        //res is the response coming from our ajax call. Use this to update DOM
+        //put the reteived selections into a select statement
+        if (res === undefined) {
+            return false;
+        }
+        //clear select element of inputs
+        $("#CharacterSheet_AlignmentID").html("");
+        $("#CharacterSheet_AlignmentID").append($("<option></option>").attr("value", null).text("Select an alignment"));
+        for (var item in res) {
+            //var resObject = JSON.parse(res);
+            //get values from response object
+            var key = res[0]["AlignmentID"];
+            var value = res[0]["AlignmentType"];
+            //dynamically add characters to the select element
+            $("#CharacterSheet_AlignmentID").append($("<option></option>").attr("value", key).text(value));
+            //.attr("text",value));
+        }
+    });
+});
+//get alignment selection for character creation
+$(function () {
+    var actionUrl = "GetBackgroundSelection";
+    $.get(actionUrl, function (res) {
+        //res is the response coming from our ajax call. Use this to update DOM
+        //put the reteived selections into a select statement
+        if (res === undefined) {
+            return false;
+        }
+        //clear select element of inputs
+        $("#CharacterSheet_BackgroundID").html("");
+        $("#CharacterSheet_BackgroundID").append($("<option></option>").attr("value", null).text("Select an alignment"));
+        for (var item in res) {
+            //var resObject = JSON.parse(res);
+            //get values from response object
+            var key = res[0]["BackgroundID"];
+            var value = res[0]["BackgroundName"];
+            //dynamically add characters to the select element
+            $("#CharacterSheet_BackgroundID").append($("<option></option>").attr("value", key).text(value));
+            //.attr("text",value));
+        }
+    });
+});
+
+
 //get the character from the database.
 $("#characterSelect").change(function (e) {
     //controller action
