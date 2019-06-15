@@ -109,6 +109,7 @@
                         <div class="col-2"></div>
                     </div>
                 </div>
+
                 <div class="carousel-item">
                     <div class="row">
                         <div class="col-12 text-center"><h4>Skills 1 of 2</h4></div>
@@ -116,11 +117,58 @@
                         <div class="col-8">
                             <div class="table-responsive">
                                 <table class="table table-striped table-sm center-data">
+                                    <thead>
+                                        <tr>
+                                            <td>Prof.</td>
+                                            <td>#</td>
+                                            <td>Type</td>
+                                        </tr>
+                                    </thead>
                                     <tbody>
                                         <tr>
-                                            <td><input type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="Skills.Acrobatics_T" type="checkbox" class="form-control" /></td>
                                             <td><input asp-for="Skills.Acrobatics" placeholder="ex. 1" class="form-control" /></td>
                                             <td><label asp-for="Skills.Acrobatics" class="control-label form-text">Acrobatics</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.AnimalHandling_T" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="Skills.AnimalHandling" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.AnimalHandling" class="control-label form-text">Animal Handling</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Arcana_T" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="Skills.Arcana" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Arcana" class="control-label form-text">Arcana</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Athletics_T" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="Skills.Athletics" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Athletics" class="control-label form-text">Athletics</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Deception_T" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="Skills.Deception" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Deception" class="control-label form-text">Deception</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.History_T" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="Skills.History" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.History" class="control-label form-text">History</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Insight_T" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="Skills.Insight" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Insight" class="control-label form-text">Insight</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Intimidation_T" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="Skills.Intimidation" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Intimidation" class="control-label form-text">Intimidation</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Investigation_T" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="Skills.Investigation" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Investigation" class="control-label form-text">Investigation</label></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -129,6 +177,100 @@
                         <div class="col-2"></div>
                     </div>
                 </div>
+
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-12 text-center"><h4>Skills 2 of 2</h4></div>
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-sm center-data">
+                                    <thead>
+                                        <tr>
+                                            <td>Prof.</td>
+                                            <td>#</td>
+                                            <td>Type</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input asp-for="Skills.Medicine_T" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="Skills.Medicine" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Medicine" class="control-label form-text">Medicine</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Nature_T" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="Skills.Nature" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Nature" class="control-label form-text">Nature</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Perception_T" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="Skills.Perception" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Perception" class="control-label form-text">Perception</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Performance_T" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="Skills.Performance" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Performance" class="control-label form-text">Performance</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Persuasion_T" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="Skills.Persuasion" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Persuasion" class="control-label form-text">Persuasion</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Religion_T" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="Skills.Religion" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Religion" class="control-label form-text">Religion</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Sleight_T" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="Skills.Sleight" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Sleight" class="control-label form-text">Sleight</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Stealth_T" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="Skills.Stealth" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Stealth" class="control-label form-text">Stealth</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input asp-for="Skills.Survival_T" type="checkbox" class="form-control" /></td>
+                                            <td><input asp-for="Skills.Survival" placeholder="ex. 1" class="form-control" /></td>
+                                            <td><label asp-for="Skills.Survival" class="control-label form-text">Survival</label></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-12 text-center"><h4>Combat Info</h4></div>
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <label asp-for="CharacterSheet.ArmorClass" class="control-label formText">Armor Class</label>
+                            <input asp-for="CharacterSheet.ArmorClass" class="form-control" placeholder="ex. 10" />
+                            <label asp-for="CharacterSheet.Initiative" class="control-label formText">Initiative</label>
+                            <input asp-for="CharacterSheet.Initiative" class="form-control" placeholder="ex. 10" />
+                            <label asp-for="CharacterSheet.Speed" class="control-label formText">Speed</label>
+                            <input asp-for="CharacterSheet.Speed" class="form-control" placeholder="ex. 10" />
+                            <label asp-for="CharacterSheet.HitPoints" class="control-label formText">Inspiration</label>
+                            <input asp-for="CharacterSheet.HitPoints" class="form-control" placeholder="ex. 10" />
+                            <label asp-for="CharacterSheet.Inspiration" class="control-label formText">Inspiration</label>
+                            <input asp-for="CharacterSheet.Inspiration" class="form-control" placeholder="ex. 10" />
+                            <label asp-for="CharacterSheet.Inspiration" class="control-label formText">Inspiration</label>
+                            <input asp-for="CharacterSheet.Inspiration" class="form-control" placeholder="ex. 10" />
+                            <label asp-for="CharacterSheet.Inspiration" class="control-label formText">Inspiration</label>
+                            <input asp-for="CharacterSheet.Inspiration" class="form-control" placeholder="ex. 10" />
+                            <label asp-for="CharacterSheet.Inspiration" class="control-label formText">Inspiration</label>
+                            <input asp-for="CharacterSheet.Inspiration" class="form-control" placeholder="ex. 10" />
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                </div>
+
 
             </div>
         </form>
@@ -145,6 +287,8 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
         </ol>
     </div>
 </div>
