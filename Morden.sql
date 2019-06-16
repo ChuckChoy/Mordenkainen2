@@ -35,6 +35,7 @@ BackgroundID int identity(1,1),
 BackgroundName varchar(20) not null,
 BackgroundDesc varchar(2000) not null,
 SkillProf varchar(50) not null,
+ToolProf varchar(50) not null,
 Languages varchar(20) not null,
 Equipment varchar(500) not null,
 
@@ -100,7 +101,9 @@ PassiveWisdom tinyint,
 ArmorClass tinyint default 10,
 Initiative tinyint default 0,
 Speed tinyint default 30,
+MaxHP int default 15,
 HitPoints int default 6,
+TemporaryHP int default 0,
 HitDie tinyint default 1,
 HitDieType varchar(10),
 DeathSaveSuccess tinyint default 0,
@@ -161,7 +164,7 @@ History_T bit Default 0,
 History tinyint Default 0,
 Insight_T bit Default 0,
 Insight tinyint Default 0,
-Intimidation_T tinyint Default 0,
+Intimidation_T bit Default 0,
 Intimidation tinyint Default 0,
 Investigation_T bit Default 0,
 Investigation tinyint Default 0,
@@ -263,6 +266,7 @@ CharacterID int,
 Armor varchar(1000),
 Weapons varchar(1000),
 Tools varchar (1000),
+Languages varchar(1000),
 
 
 CONSTRAINT PK_Prof PRIMARY KEY CLUSTERED(ProfID),
@@ -290,20 +294,32 @@ Values('Gnome', 'An excitement and enthusiasm for live. Gnomes are small with a 
 
 insert into Background
 values('Acolyte', 'You have spent your life in the service of a god/gods and are the intermediary between the divine and mortal',
-'Insight, Religion','Two of your choice','A holy symbol, a prayer book, 5 sticks of incense, vestments, common clothes, belt pouch, 15 gp')
+'Insight, Religion','None','Two of your choice','A holy symbol, a prayer book, 5 sticks of incense, vestments, common clothes, belt pouch, 15 gp'),
+('Charlatan','You have always had a way with people. You know what makes them tick, and can tease out their hearts desire','Deception,Sleight of Hand',
+'Disguise Kit, Forgery Kit','None','A Set of fine Clothes, a disguise kit, tools of con choice, a belt pouch, 15gp'),
+('Soldier','War is your life, You have trained for it starting as a youth. You are fimiliar with all its basic aspects.',
+'Athletics, Intimidation','One type of gaming set, Vehicles(land)','None','Rank insigia, trophy from enemy, dice or cards, common clothes, belt pouch, 10gp')
 
 insert into Alignment
-Values('Chaotic Good','They follow their conscience and try to help out without regard to the rules.')
+Values('Lawful Good', 'They follow the rule of law. Honor, Duty and Integrity is their calling card.'),
+('Chaotic Good','They do good as they so desire. Free rebels with a cause.'),
+('Neutral Good','Doing the right thing because it is right, not because it is lawful or societally correct.'),
+('Lawful Neutral','Act in accordance with the code they have accepted, usually in addition to the law'),
+('Chaotic Neutral','People who follow their desires first and worry about the morality second.'),
+('True Neutral', 'They seek a balance between both sides of the coin'),
+('Neutral Evil','They follow their own goals selfishly and are not afraid to get dirty doing it.'),
+('Chaotic Evil','Everything and everyone is expendable in their rash desires'),
+('Lawful Evil','They enjoy order and planning and systematically destroying opposition.')
 
 insert into CharacterSheet
-Values(1,'Crush','Barbarian','None',1,1,'Bob','Gnome',1,2000,18,12,14,9,9,11,0,0,0,14,2,30,14,1,'D12',0,0,'Attack 1; Attack2;',
+Values(1,'Crush','Barbarian','None',1,1,'Bob','Gnome',1,2000,18,12,14,9,9,11,0,0,0,14,2,30,20,14,14,1,'D12',0,0,'Attack 1; Attack2;',
 'Weapon1:1-hand axe;Armor:Leather;Boots:Leather;Backpack;','Personality Traits:','Ideals:;','Bonds:','Flaws:;','Features:;','Traits:;')
 
 Insert into SavingThrows
 Values(1,4,1,1,1,2,1,0,0,0,0,0,0)
 
 Insert into Skills
-Values(1,1,1,3,0,0,0,0,1,3,0,0,0,0,1,3,0,0,0,0,0,0,0,0,1,4,0,0,0,0,0,0,0,0,0,0,1,5)
+Values(1,1,1,3,0,0,0,0,1,3,0,0,0,0,1,3,0,0,0,0,0,0,0,0,1,4,0,0,0,0,0,0,0,0,0,1,5)
 
 Insert into Money
 Values(1,0,0,0,10,0 )
@@ -312,6 +328,6 @@ Insert into Appearance
 Values(1,20,'3.6',45,'Brown','Sun-kissed','Honey colored','Has many scars')
 
 Insert into Proficiencies
-Values(1,'Light Armor;','Axes;','None' )
+Values(1,'Light Armor;','Axes;','Rope','Draconic' )
 
 /*Should I make Procedures for most frequently used queries?*/
