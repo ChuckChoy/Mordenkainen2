@@ -1,0 +1,19 @@
+﻿@model LayoutViewModel
+@{
+    ViewData["Title"] = "Contact";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+<div>
+    First Name <input type="text" name="FirstName" value="Your first name"> <br>
+    <br>
+    Last Name <input type="text" name="FirstName" value="Your last name"> <br>
+    <br>
+    Your Country <select id="country" name="country">
+        <option value="australia">Australia</option>
+        <option value="canada">Canada</option>
+        <option value="usa">USA</option>
+    </select> <br>
+    <br> Your Message
+    <br> <textarea rows="4" cols="50"></textarea>
+</div>
