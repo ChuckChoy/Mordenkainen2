@@ -91,6 +91,7 @@ namespace Mordenkainen2.Models
         public string BackgroundName { get; set; }
         public string BackgroundDesc { get; set; }
         public string SkillProf { get; set; }
+        public string ToolProf { get; set; }
         public string Languages { get; set; }
         public string Equipment { get; set; }
 
@@ -111,6 +112,7 @@ namespace Mordenkainen2.Models
         [Key]
         public int AlignmentID { get; set; }
         public string AlignmentType { get; set; }
+        public string AlignmentDesc { get; set; }
 
         ICollection<CharacterSheet> CharacterSheets { get; set; }
     }

@@ -93,11 +93,13 @@ $(function () {
         //clear select element of inputs
         $("#CharacterSheet_AlignmentID").html("");
         $("#CharacterSheet_AlignmentID").append($("<option></option>").attr("value", null).text("Select an alignment"));
+        //var result = JSON.parse(res);
         for (var item in res) {
-            //var resObject = JSON.parse(res);
-            //get values from response object
-            var key = res[0]["AlignmentID"];
-            var value = res[0]["AlignmentType"];
+            //get values from response object because it isn't json. This gets the object properties
+            //var keys = res[Object.keys(item)[0]];
+            var keys = res[item];
+            var key = keys["alignmentID"];
+            var value = keys["alignmentType"];
             //dynamically add characters to the select element
             $("#CharacterSheet_AlignmentID").append($("<option></option>").attr("value", key).text(value));
             //.attr("text",value));
@@ -115,12 +117,13 @@ $(function () {
         }
         //clear select element of inputs
         $("#CharacterSheet_BackgroundID").html("");
-        $("#CharacterSheet_BackgroundID").append($("<option></option>").attr("value", null).text("Select an alignment"));
+        $("#CharacterSheet_BackgroundID").append($("<option></option>").attr("value", null).text("Select a background"));
         for (var item in res) {
             //var resObject = JSON.parse(res);
             //get values from response object
-            var key = res[0]["BackgroundID"];
-            var value = res[0]["BackgroundName"];
+            var keys = res[item];
+            var key = keys["backgroundID"];
+            var value = keys["backgroundName"];
             //dynamically add characters to the select element
             $("#CharacterSheet_BackgroundID").append($("<option></option>").attr("value", key).text(value));
             //.attr("text",value));

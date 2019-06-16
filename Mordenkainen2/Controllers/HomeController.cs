@@ -119,7 +119,7 @@ namespace Mordenkainen2.Controllers
         [HttpGet]
         public JsonResult GetBackgroundSelection()
         {
-            return Json(EFQueries.GetAlignments());
+            return Json(EFQueries.GetBackgrounds());
         }
 
         [HttpPost]
