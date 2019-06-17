@@ -135,17 +135,18 @@ namespace Mordenkainen2.Models
     public class CharacterSheet
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CharacterID { get; set; }
         public int UserID { get; set; }
         public string CharacterName { get; set; }
         public string Class { get; set; }
         public string Subclass { get; set; }
         public byte CharLevel { get; set; }
-        public int BackgroundID { get; set; }
+        public int? BackgroundID { get; set; } = null;
         public Background Background { get; set; }
         public string PlayerName { get; set; }
         public string Race { get; set; }
-        public int AlignmentID { get; set; }
+        public int? AlignmentID { get; set; } = null;
         public Alignment Alignment { get; set; }
         public int Experience { get; set; }
         public byte Strength { get; set; }
@@ -275,7 +276,7 @@ namespace Mordenkainen2.Models
         [Key]
         public int AppearanceID { get; set; }
         [ForeignKey("CharacterSheet")]
-        public int CharacterID { get; set; }
+        public int? CharacterID { get; set; } = null;
         public int Age { get; set; }
         public string Height { get; set; }
         public int CharWeight { get; set; }

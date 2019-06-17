@@ -105,5 +105,21 @@ namespace Mordenkainen2.Models
                 context.Entry(model).Property(names[1]).IsModified = true;
             }
         }
+
+        public static CharacterSheetViewModel FillNullObjects(CharacterSheetViewModel csvm)
+        {
+            //put object properties i.e. nested objects into an array
+            PropertyInfo[] propArray = csvm.GetType().GetProperties();
+            //loop through nested objects
+            for (int i = 0; i < propArray.Length; i++)
+            {
+                //get value of object
+                var prop = propArray[i].GetValue(csvm);
+                //if object is null, populate it with an empty object of appropriate type.
+                if (prop == null)
+                    propArray[i].SetValue(csvm, Activator.CreateInstance(propArray[i].PropertyType));
+            }
+            return csvm;
+        }
     }
 }

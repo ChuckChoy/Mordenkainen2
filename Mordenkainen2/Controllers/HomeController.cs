@@ -78,11 +78,20 @@ namespace Mordenkainen2.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult CreateCharater(CharacterSheetViewModel sheet)
+        public IActionResult CreateCharacter(CharacterSheetViewModel sheet)
         {
+            //get the user id from the session variable
+            //int? userID = HttpContext.Session.GetInt32("_UserID");
+            int userID = 1;//hardcoded for time purposes
+            //if user isn't logged in return bad request.
+            if (userID == null)
+                return BadRequest("No user login.");
+            //fill null properties (nested objects) with empty objects.
+            sheet = Helper.FillNullObjects(sheet);
             try
             {
+                //add user's id to object
+                sheet.CharacterSheet.UserID = (int)userID; //actual
                 bool characterCreated = EFQueries.CreateCharacter(sheet);
                 if (characterCreated)
                     return Ok();

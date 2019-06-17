@@ -32,7 +32,7 @@ $(function () {
 $(function () {
     $("#sheetform").submit(function (e) {
         e.preventDefault();  //prevent normal form submission
-        var actionUrl = $(this).attr("CreateCharacter");  // get the form action value
+        var actionUrl = $(this).attr("action");  // get the form action value
         $.post(actionUrl, $(this).serialize(), function (res) {
             //res is the response coming from our ajax call. Use this to update DOM
             $("#viewB").html(res);
@@ -42,10 +42,10 @@ $(function () {
 
 //save character with the save button at top of page.
 $("#saveCharacter").on("click",function () {   
-    var actionUrl = $(this).attr("CreateCharacter");  // get the form action value
+    var actionUrl = $(this).attr("action");  // get the form action value
+    $("#sheetform").submit();
     //get current contents of the form
-    $("#sheetform").submit(function () {
-        //prevent actual submit
+    $("#sheetform").on("submit",function (e) {
         e.preventDefault();
         //send serialized object via ajax post to server
         $.post(actionUrl, $(this).serialize(), function (res) {
@@ -72,8 +72,9 @@ $(function () {
         for (var item in res) {          
             //var resObject = JSON.parse(res);
             //get values from response object
-            var key = res[0]["characterID"];
-            var value = res[0]["characterName"];
+            var keys = res[item];
+            var key = keys["characterID"];
+            var value = keys["characterName"];
             //dynamically add characters to the select element
             $("#characterSelect").append($("<option></option>").attr("value", key).text(value));
                 //.attr("text",value));
@@ -298,7 +299,7 @@ $(".container-fluid").on("change", ".sheetObj", function (e) {
         e.preventDefault();
         return false;
     }
-    var actionUrl = "UpdateCharacterSheet";  // get the form action value
+    var actionUrl = "UpdateCharacterProperty";  // get the form action value
     var n = $(this).attr("name");
     var val = $(this).val();
     //ajax post object to server

@@ -141,25 +141,43 @@ namespace Mordenkainen2.Models
         //insert new character
         public static bool CreateCharacter(CharacterSheetViewModel sheet)
         {
+            int userID = sheet.CharacterSheet.UserID;
+            string charName = sheet.CharacterSheet.CharacterName;
             try
             {
                 using (var context = new Context())
                 {
                     //need an add for each table?
-                    context.Add(sheet.CharacterSheet);
-                    context.Add(sheet.SavingThrows);
-                    context.Add(sheet.Skills);
-                    context.Add(sheet.Money);
-                    context.Add(sheet.Proficiencies);
-                    context.Add(sheet.Appearance);
-                    context.Add(sheet.Spellbook);
+                    //save the character sheet table first, so that a Character ID gets generated
+                    context.CharacterSheet.Add(sheet.CharacterSheet);
+                    context.SaveChanges();
+                    //query that character ID
+                    int charID = context.CharacterSheet
+                        .Where(d => d.UserID == userID && d.CharacterName == charName)
+                        .Select(d => d.CharacterID)
+                        .First();
+                    //Add the Character ID to related tables.
+                    sheet.SavingThrows.CharacterID = charID;
+                    context.SavingThrows.Add(sheet.SavingThrows);
+                    sheet.Skills.CharacterID = charID;
+                    context.Skills.Add(sheet.Skills);
+                    sheet.Money.CharacterID = charID;
+                    context.Money.Add(sheet.Money);
+                    sheet.Proficiencies.CharacterID = charID;
+                    context.Proficiencies.Add(sheet.Proficiencies);
+                    sheet.Appearance.CharacterID = charID;
+                    context.Appearance.Add(sheet.Appearance); 
+                    sheet.Spellbook.CharacterID = charID;
+                    context.Spellbook.Add(sheet.Spellbook);
+                    
                     context.SaveChanges();
                     return true;
                 }
                 
             }
-            catch
+            catch (Exception ex)
             {
+                var message = ex;
                 return false;
             }
         }
