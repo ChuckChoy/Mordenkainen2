@@ -1,4 +1,67 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+<div class="container-fluid">
+    <div class="row no-gutters topOfIndex">
+        <div class="col-12 text-center">
+            <h1>A Character Management Solution</h1>
+        </div>
+        <div class="col-3"></div>
+        <div class="col-6 text-center">
+            <p>
+                Morenkainen was designed so that people who play Dungeons and Dragons 5th edition. This
+                site is for the creation, storage, and tracking of your important characters. All you need
+                to do is to create an account for us to keep track of your adventurers.
+            </p>
+            <a asp-controller="Home" asp-action="CharacterCreation" class="btn btn-danger" role="button">Create a Character</a>
+            <a asp-controller="Home" asp-action="CharacterSheet" class="btn btn-danger" role="button">Manage Character</a>
+        </div>
+        <div class="col-3"></div>
+    </div>
+    <hr />
+    <div class="row footer-pad">
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 order-sm-1 order-md-1 order-lg-1 order-xl-1 text-center">
+            <a asp-controller="Home" asp-action="CharacterCreation"><img src="~/images/sm_creation.png" class="img-fluid max60 " /></a>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 order-sm-0 order-md-0 order-lg-2 order-xl-2 text-center">
+            <h1>Character Creations</h1>
+            <p>This page has the inputs needed a Character on a carousel so that
+            cycling through a character's information can be done as easily as
+            possibly and so long as you have a character name, you can save at
+            character at any point of creation</p>
+            <a asp-controller="Home" asp-action="CharacterCreation" class="btn btn-danger" role="button">Create a Character</a>
+        </div>
+    </div>
+    <div class="row footer-pad">
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center">
+            <h1>Character Sheet</h1>
+            <p>
+                The Character Sheet allows you to select one of your saved characters,
+                view their information and then edit it. This includes an auto save feature
+                so that the character infromation won&#39;t be lost. This will allow a player
+                to use this feature at any time from free time to game time.
+            </p>
+            <a asp-controller="Home" asp-action="CharacterSheet" class="btn btn-danger" role="button">Manage Character</a>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center">
+            <a asp-controller="Home" asp-action="CharacterSheet"><img src="~/images/sm_charactersheet.png" class="img-fluid max40" /></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1>Let us know</h1>
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-4 text-center">
+                    <p>
+                        Having trouble? Noticing any descrepancies? Or, maybe you just want to give us your
+                        honest feedback. In that case, go the click on the Contact button and let us know what you
+                        are thinking
+                    </p>
+                    <a asp-controller="Home" asp-action="Contact" class="btn btn-danger" role="button">Contact</a>
+                </div>
+                <div class="col-4"></div>
+            </div>
+        </div>
+    </div>
+</div>

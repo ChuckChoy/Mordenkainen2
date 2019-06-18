@@ -87,6 +87,33 @@ body {
     color: white;
 }
 
+.topOfIndex {
+    background-image: url("../images/Home_Top.png");
+    max-width:100%;
+    height:auto;
+    background-size:100% 100%;
+}
+
+.max60{
+    max-width:60%;
+}
+.max40{
+    max-width:40%;
+}
+
+.contact {
+    background-image: url("../images/contact.png");
+    max-width: 100%;
+    height: auto;
+    background-size: 100% 100%;
+}
+
+.contact-form{
+    width:100%;
+    padding:5px;
+    font-size:150%;
+}
+
 .carousel-control-prev-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23e50000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
 }
@@ -335,3 +362,38 @@ body {
     resize:none;
 }
 
+@media (min-width: 576px) {
+    .topOfIndex{
+        height:25em;
+    }
+    .contact{
+        height:25em;
+    }
+}
+
+@media (min-width: 768px) {
+    .topOfIndex {
+        height: 30em;
+    }
+    .contact{
+        height:30em;
+    }
+}
+
+@media (min-width: 992px) {
+    .topOfIndex {
+        height: 35em;
+    }
+    .contact{
+        height:35em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .topOfIndex {
+        height: 40em;
+    }
+    .contact{
+        height:40em;
+    }
+}
